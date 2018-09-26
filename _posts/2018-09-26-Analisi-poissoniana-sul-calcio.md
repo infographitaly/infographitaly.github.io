@@ -3,7 +3,7 @@ title: "Analisi poissoniana sul Calcio"
 excerpt: "Questo post espone un'analisi statistica condotta sui dati disponibili sulla serie A della stagione 2017-2018"
 layout: single
 header:
-  overlay_image: /2018-09-26-Analisi-poissoniana-sul-calcio/Roma_stadio_Olimpico.jpg
+  overlay_image: /images/2018-09-26-Analisi-poissoniana-sul-calcio/Roma_stadio_Olimpico.jpg
   overlay_filter: 0.5
   caption: "Stadio Olimpico di Roma"
 categories:
