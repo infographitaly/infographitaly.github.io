@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "it-IT"
-title                    : "https://infographitaly.github.io/"
+title                    : "infographitaly"
 title_separator          : "-"
 name                     : "V A"
 description              : "An amazing website on DS"
