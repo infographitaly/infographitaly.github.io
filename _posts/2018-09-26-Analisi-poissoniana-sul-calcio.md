@@ -7,9 +7,11 @@ header:
   overlay_filter: 0.5
   caption: "Stadio Olimpico di Roma"
 categories:
-  - data science
+  - data analyst
   - python
+  - calcio
 tags:
+  - calcio
   - football
   - soccer
   - python
