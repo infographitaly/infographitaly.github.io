@@ -269,8 +269,8 @@ jekyll-archives:
     tag: /tags/:name/
 
 
-HTML Compression
-- http://jch.penibelst.de/
+# HTML Compression
+# - http://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
@@ -287,6 +287,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: # true
       share: true
       related: true
