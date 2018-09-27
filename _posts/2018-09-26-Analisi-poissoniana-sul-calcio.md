@@ -32,5 +32,5 @@ Mentre nel primo sono disponibile le statistiche di tutte le partite giocate per
 
 Nella tabella successiva sono riportati gli esempi pratici di qualche dato usato durante l'analisi:
 
-
+{% include /prova/prova.html %}
 
