@@ -22,7 +22,7 @@
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(90% - #{$right-sidebar-width-narrow});
+    width: calc(50% - #{$right-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
   }
 
