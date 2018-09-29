@@ -34,3 +34,14 @@ Nella tabella successiva sono riportati gli esempi pratici di qualche dato usato
 
 {% include /prova/prova.html %}
 
+Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto con python (e in particolare pandas).
+
+<figure class="half">
+    <a href="/images/python.png"><img src="/images/python.png"></a>
+    <figcaption>Caption describing these two images.</figcaption>
+</figure>
+
+
+
+
+Analizzando i dati delle partite giocate nella scorsa stagione possiamo notare tra la media gol delle squadre in case e fuori casa.
