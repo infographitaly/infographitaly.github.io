@@ -37,7 +37,7 @@ Nella tabella successiva sono riportati gli esempi pratici di qualche dato usato
 Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto con python (e in particolare pandas).
 
 <figure class="half">
-    <a href="/images/python.png"><img src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/python.png"></a>
+    <a href="/images/python.png"><img src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/python.png"  class="center"></a>
     <figcaption>Caption describing these two images.</figcaption>
 </figure>
 
