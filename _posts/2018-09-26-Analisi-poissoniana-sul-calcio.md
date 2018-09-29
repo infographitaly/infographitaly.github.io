@@ -41,6 +41,7 @@ Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto 
     <figcaption>Immagine presa da [xkcd](https://imgs.xkcd.com/comics/python.png).</figcaption>
 </figure>
 
+![your image]({{ '/images/2018-09-26-Analisi-poissoniana-sul-calcio/python.png' | https://imgs.xkcd.com/comics/python.png }})
 
 
 
