@@ -38,7 +38,7 @@ Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto 
 
 <figure class="center">
     <img src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/python.png"  class="center">
-    <figcaption >Immagine presa da <a href="https://imgs.xkcd.com/comics/python.png">xkcd</a></figcaption>
+	<div class="caption">Immagine presa da <a href="https://imgs.xkcd.com/comics/python.png">xkcd</a></div>
 </figure>
 
 ![your image]({{ '/images/2018-09-26-Analisi-poissoniana-sul-calcio/python.png' | https://imgs.xkcd.com/comics/python.png }})
