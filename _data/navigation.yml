@@ -3,7 +3,7 @@ main:
     - title: "Home"
     -  url: https://infographitaly.github.io/
     - title: "About"
-    -  url: https://mmistakes.github.io/about/
+    -  url: https://infographitaly.github.io/about/
 
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
