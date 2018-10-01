@@ -36,7 +36,7 @@ Nella tabella successiva sono riportati gli esempi pratici di qualche dato usato
 
 Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto con python (e in particolare pandas).
 
-<div style="align: left; text-align:center;">
+<div style="align: center; text-align:center;">
     <img src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/python.png"  class="center">
 	<div class="caption">Immagine presa da <a href="https://imgs.xkcd.com/comics/python.png">xkcd</a></div>
 </div>
