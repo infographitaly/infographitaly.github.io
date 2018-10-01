@@ -1,9 +1,9 @@
 # main links
 main:
     - title: "Home"
-    -  url: https://infographitaly.github.io/
+     url: https://infographitaly.github.io/
     - title: "About"
-    -  url: https://infographitaly.github.io/about/
+     url: /about/
 
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
