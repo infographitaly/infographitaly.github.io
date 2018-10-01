@@ -4,8 +4,8 @@
 
 #main {
     counter-reset: captions;
-    @include container;
-    @include clearfix;
+
+
     clear: both;
     margin-top: 2em;
     h1 {
@@ -14,7 +14,7 @@
 }
 .post,
 .page {
-        @include container;
+
         @include grid(12,10);
         @include prefix(12,1);
         @include suffix(12,1);
