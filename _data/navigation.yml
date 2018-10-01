@@ -1,7 +1,7 @@
 # main links
 main:
     - title: "Home"
-    -  url: "https://infographitaly.github.io/"
+    -  url: https://infographitaly.github.io/
     - title: "About"
     -  url: https://mmistakes.github.io/about/
 
