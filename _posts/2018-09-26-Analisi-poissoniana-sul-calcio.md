@@ -55,3 +55,15 @@ mean_away_FT = Partite_1718['FTAG'].mean()
 
 Dai dati delle partite possiamo vedere la media dei gol segnati in casa e confrontarli quelli fatti fuori casa.
 
+
+<table class="table table-bordered table-hover table-condensed">
+<th title="Field #1">In casa</th>
+<th title="Field #2">Fuori casa</th>
+</tr></thead>
+<tbody><tr>
+<td align="right">1.46</td>
+<td align="right">1.22</td>
+</tr>
+</tbody></table>
+
+
