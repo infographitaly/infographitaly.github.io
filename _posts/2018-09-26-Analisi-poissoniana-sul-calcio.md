@@ -66,9 +66,11 @@ A questo punto possiamo introdurre la distribuzione di Poisson.
 	<div class="caption"><small>(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)</small></div>
 </div>
 La distribuzione di poisson viene utilizzata quando si vuole conoscere la probabilità di ottenere un certo numero di successi per unità di tempo, sapendo che <i>mediamente</i> se ne verifica un numero {\displaystyle \lambda } \lambda:
+
 $$
 P\left( x \right) = \frac{e^{-\lambda} \lambda ^x }{x!}, \lambda>0
 $$
+
 Aspettate, c'è scritto mediamente? Ma allora è proprio quello che fa al caso nostro! Il problema è che ci sono alcune condizioni da rispettare (altrimenti il signor Siméon-Denis "El Tanque" Poisson ce accappotta co na manata):
 - gli eventi devono essere indipendenti -> Questo non ci piace perché significa che se viene segnato un gol al primo minuto la squadra non ne risente e si comporta come se nulla fosse accaduto!
 - la probabilità che in una determinata unità di tempo si verifichi un esito favorevole deve essere la stessa per tutte le unità -> Ci piace? Naturalmente no, in quanto questo significa che la probabilità di segnare un gol al primo tempo è la stessa che al secondo....ma i giocatori risento del calo fisico!
