@@ -17,6 +17,7 @@ tags:
   - python
   - scrapy
   - d3
+mathjax: true
 author: "V A"
 date: "26 Settembre 2018"
 ---
@@ -82,7 +83,7 @@ Ma è un distrastro! Non ne va bene una! ... Ma lo è veramente? Potremmo ragion
     <img src="http://www.nov-art.eu/img/92MinutiDiApplausi.gif"  class="center">
 	<div class="caption"><small>Qui ci vogliono 92 minuti di applausi! (meglio 90...)</small></div>
 </div>
-
+sacfas
 
 
 
