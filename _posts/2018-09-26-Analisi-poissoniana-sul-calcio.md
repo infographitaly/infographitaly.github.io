@@ -61,7 +61,8 @@ Dai dati delle partite possiamo vedere la media dei gol segnati in casa e confro
 <th title="Field #2">In casa</th>
 <th title="Field #3">Fuori casa</th>
 </tr></thead>
-<tbody>Media Gol<tr>
+<tbody><tr>
+<td align="right">Media Gol</td>
 <td align="right">1.46</td>
 <td align="right">1.22</td>
 </tr>
