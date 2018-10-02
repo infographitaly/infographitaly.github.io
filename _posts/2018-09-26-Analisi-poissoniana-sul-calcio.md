@@ -42,6 +42,16 @@ Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto 
 </div>
 
 
+Per prima cosa dobbiamo importare pandas (necessaria per lavorare con i dataframe) e poi usare la funzione <em>open_csv</em> per aprire (indovinate un po?!) i csv. 
+In seguito abbiamo calcolato la media dei gol segnati in casa e fuori casa così da confrontarli tra loro. 
+```
+import pandas
+Dati_1718 = pd.read_excel('path\Dati_1718.xlsx')
+Partite_1718 = pd.read_excel('path\Partite_1718.xlsx')
 
+mean_home_FT = Partite_1718['FTHG'].mean()
+mean_away_FT = Partite_1718['FTAG'].mean()
+```
 
-Analizzando i dati delle partite giocate nella scorsa stagione possiamo notare tra la media gol delle squadre in case e fuori casa.
+Dai dati delle partite possiamo vedere la media dei gol segnati in casa e confrontarli quelli fatti fuori casa.
+
