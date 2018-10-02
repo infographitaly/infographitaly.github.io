@@ -57,10 +57,11 @@ Dai dati delle partite possiamo vedere la media dei gol segnati in casa e confro
 
 
 <table class="table table-bordered table-hover table-condensed">
-<th title="Field #1">In casa</th>
-<th title="Field #2">Fuori casa</th>
+<thead><tr><th title="Field #1"></th>
+<th title="Field #2">In casa</th>
+<th title="Field #3">Fuori casa</th>
 </tr></thead>
-<tbody><tr>
+<tbody>Media Gol<tr>
 <td align="right">1.46</td>
 <td align="right">1.22</td>
 </tr>
