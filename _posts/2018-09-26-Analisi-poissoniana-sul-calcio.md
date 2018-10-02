@@ -37,7 +37,7 @@ Nella tabella successiva sono riportati gli esempi pratici di qualche dato usato
 Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto con python (e in particolare pandas).
 
 <div style="align: center; text-align:center;">
-    <img src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/python.png"  class="center">
+    <img src="https://imgs.xkcd.com/comics/python.png"  class="center">
 	<div class="caption">Immagine presa da <a href="https://imgs.xkcd.com/comics/python.png">xkcd</a></div>
 </div>
 
@@ -63,7 +63,7 @@ A questo punto possiamo introdurre la distribuzione di Poisson.
 <div style="align: center; text-align:center;">
     <img src="https://imgs.xkcd.com/comics/poisson.jpg"  class="center">
 	<div class="caption">Toh!Un'altra immagine presa da <a href="https://xkcd.com/12/">xkcd</a></div>
-	<div class="caption">(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)<small>(24px)</small></div>
+	<div class="caption"><small>(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)(24px)</small></div>
 </div>
 
 
