@@ -43,7 +43,7 @@ Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto 
 
 
 Per prima cosa dobbiamo importare pandas (necessaria per lavorare con i dataframe) e poi usare la funzione <em>open_csv</em> per aprire (indovinate un po?!) i csv. 
-In seguito abbiamo calcolato la media dei gol segnati in casa e fuori casa così da confrontarli tra loro. 
+In seguito abbiamo calcolato la media dei gol segnati in casa e fuori casa specificando la colonna e utilizzando <i>.mean()</i>. 
 ```
 import pandas
 Dati_1718 = pd.read_excel('path\Dati_1718.xlsx')
@@ -51,15 +51,21 @@ Partite_1718 = pd.read_excel('path\Partite_1718.xlsx')
 
 mean_home_FT = Partite_1718['FTHG'].mean()
 mean_away_FT = Partite_1718['FTAG'].mean()
+
+
+Media Gol in casa    1.45526
+Media Gol fuori casa    1.22105
 ```
+AH!
+Possiamo subito notare una caratteristica di questi dati! La media gol in casa è maggiore che fuori casa e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
+In principio quindi dovremmo considerare anche questo fattore, ma per passeremo oltre e (forse) ci torneremo più in la.
+A questo punto possiamo introdurre la distribuzione di Poisson.
+<div style="align: center; text-align:center;">
+    <img src="https://xkcd.com/12/"  class="center">
+	<div class="caption">Toh!Un'altra immagine presa da <a href="https://xkcd.com/12/">xkcd</a></div>
+	<div class="caption">Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a></div>
+</div>
 
-Dai dati delle partite possiamo vedere la media dei gol segnati in casa e confrontarli quelli fatti fuori casa.
-
-
-
-    Media Gol in casa    1.45526
-    Media Gol fuori casa    1.22105
-    dtype: float64
 
 
 
