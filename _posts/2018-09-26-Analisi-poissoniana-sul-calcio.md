@@ -63,7 +63,7 @@ A questo punto possiamo introdurre la distribuzione di Poisson.
 <div style="align: center; text-align:center;">
     <img src="https://imgs.xkcd.com/comics/poisson.jpg"  class="center">
 	<div class="caption">Toh!Un'altra immagine presa da <a href="https://xkcd.com/12/">xkcd</a></div>
-	<div class="caption">(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)</div>
+	<div class="caption">(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)<small>(24px)</small></div>
 </div>
 
 
