@@ -38,7 +38,7 @@ Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto 
 
 <div style="align: center; text-align:center;">
     <img src="https://imgs.xkcd.com/comics/python.png"  class="center">
-	<div class="caption">Immagine presa da <a href="https://imgs.xkcd.com/comics/python.png">xkcd</a></div>
+	<div class="caption"><small>Immagine presa da <a href="https://imgs.xkcd.com/comics/python.png">xkcd</a></small></div>
 </div>
 
 
@@ -62,10 +62,24 @@ In principio quindi dovremmo considerare anche questo fattore, ma per passeremo 
 A questo punto possiamo introdurre la distribuzione di Poisson.
 <div style="align: center; text-align:center;">
     <img src="https://imgs.xkcd.com/comics/poisson.jpg"  class="center">
-	<div class="caption">Toh!Un'altra immagine presa da <a href="https://xkcd.com/12/">xkcd</a></div>
-	<div class="caption"><small>(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)(24px)</small></div>
+	<div class="caption"><small>Toh!Un'altra immagine presa da <a href="https://xkcd.com/12/">xkcd</a></small></div>
+	<div class="caption"><small>(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)</small></div>
 </div>
+La distribuzione di poisson viene utilizzata quando si vuole conoscere la probabilità di ottenere un certo numero di successi per unità di tempo, sapendo che <i>mediamente</i> se ne verifica un numero {\displaystyle \lambda } \lambda:
+$$
+P\left( x \right) = \frac{e^{-\lambda} \lambda ^x }{x!}, \lambda>0
+$$
+Aspettate, c'è scritto mediamente? Ma allora è proprio quello che fa al caso nostro! Il problema è che ci sono alcune condizioni da rispettare (altrimenti il signor Siméon-Denis "El Tanque" Poisson ce accappotta co na manata):
+- gli eventi devono essere indipendenti -> Questo non ci piace perché significa che se viene segnato un gol al primo minuto la squadra non ne risente e si comporta come se nulla fosse accaduto!
+- la probabilità che in una determinata unità di tempo si verifichi un esito favorevole deve essere la stessa per tutte le unità -> Ci piace? Naturalmente no, in quanto questo significa che la probabilità di segnare un gol al primo tempo è la stessa che al secondo....ma i giocatori risento del calo fisico!
+- il numero medio di successi per unità di tempo deve essere costante -> Finalmente una buona notizia...ah no...questo ci sta dicendo che la media gol si mantiene costante durante la partita (forse con Zeman è così)
+Ma è un distrastro! Non ne va bene una! ... Ma lo è veramente? Potremmo ragionarci su e aggirare il problema considerando un'unità di tempo piuttosto larga e consona a quello che ci interessa a noi. Questa finestra temporale potrebbe essere proprio lunga 90 minuti! In questo modo avremmo risolto la maggior parte dei problemi! 
+ 
 
+<div style="align: center; text-align:center;">
+    <img src="http://www.nov-art.eu/img/92MinutiDiApplausi.gif"  class="center">
+	<div class="caption"><small>Qui ci vogliono 92 minuti di applausi! (meglio 90...)</small></div>
+</div>
 
 
 
