@@ -85,6 +85,7 @@ Ma è un distrastro! Non ne va bene una! ... Ma lo è veramente? Potremmo ragion
 </div>
 
 
-
+Quindi possiamo fare un breve confronto:
+{% include /prova/home_obs_teo_poisson.html %}
 
 

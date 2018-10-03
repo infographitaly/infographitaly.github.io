@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chart created with amCharts | amCharts</title>
+		<meta name="description" content="chart created using amCharts live editor" />
+		
+		<!-- amCharts javascript sources -->
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+		
+
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "serial",
+					"categoryField": "Categoria",
+					"sequencedAnimation": false,
+					"startDuration": 1,
+					"processCount": 997,
+					"theme": "default",
+					"categoryAxis": {
+						"title": "Numero di gol"
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"balloonText": "Valore osservato di [[category]]:[[value]]",
+							"bulletBorderThickness": 0,
+							"columnWidth": 0.83,
+							"fillAlphas": 1,
+							"gapPeriod": 0,
+							"id": "AmGraph-1",
+							"labelPosition": "middle",
+							"labelText": "[[value]]",
+							"maxBulletSize": 62,
+							"minBulletSize": 0,
+							"showBulletsAt": "open",
+							"tabIndex": 0,
+							"title": "Osservati",
+							"type": "column",
+							"valueField": "Osservati"
+						},
+						{
+							"animationPlayed": true,
+							"balloonText": "Valore teorico di [[category]]:[[value]]",
+							"bullet": "square",
+							"id": "AmGraph-2",
+							"labelText": "[[value]]",
+							"lineThickness": 2,
+							"negativeBase": -2,
+							"title": "Teorici",
+							"valueField": "Teorici"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"title": "Frequenza dei gol",
+							"titleFontSize": 13,
+							"titleRotation": 270
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"legend": {
+						"enabled": true,
+						"useGraphSettings": true
+					},
+					"titles": [
+						{
+							"id": "Title-1",
+							"size": 15,
+							"text": "Valori osservati Vs teorici"
+						}
+					],
+					"dataProvider": [
+						{
+							"Categoria": "0",
+							"Osservati": "101",
+							"Teorici": "88.6688"
+						},
+						{
+							"Categoria": "1",
+							"Osservati": "120",
+							"Teorici": "129.0364"
+						},
+						{
+							"Categoria": "2",
+							"Osservati": "86",
+							"Teorici": "93.8910"
+						},
+						{
+							"Categoria": "3",
+							"Osservati": "46",
+							"Teorici": "45.5454"
+						},
+						{
+							"Categoria": "4",
+							"Osservati": "17",
+							"Teorici": "16.5701"
+						},
+						{
+							"Categoria": "5",
+							"Osservati": "6",
+							"Teorici": "4.8228"
+						},
+						{
+							"Categoria": "6",
+							"Osservati": "3",
+							"Teorici": "1.1697"
+						},
+						{
+							"Categoria": "7",
+							"Osservati": "1",
+							"Teorici": "0.2432"
+						},
+						{
+							"Categoria": ""
+						}
+					]
+				}
+			);
+		</script>
+	</head>
+	<body>
+		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+	</body>
+</html>
