@@ -76,14 +76,15 @@ Aspettate, c'è scritto mediamente? Ma allora è proprio quello che fa al caso n
 - gli eventi devono essere indipendenti -> Questo non ci piace perché significa che se viene segnato un gol al primo minuto la squadra non ne risente e si comporta come se nulla fosse accaduto!
 - la probabilità che in una determinata unità di tempo si verifichi un esito favorevole deve essere la stessa per tutte le unità -> Ci piace? Naturalmente no, in quanto questo significa che la probabilità di segnare un gol al primo tempo è la stessa che al secondo....ma i giocatori risento del calo fisico!
 - il numero medio di successi per unità di tempo deve essere costante -> Finalmente una buona notizia...ah no...questo ci sta dicendo che la media gol si mantiene costante durante la partita (forse con Zeman è così)
-Ma è un distrastro! Non ne va bene una! ... Ma lo è veramente? Potremmo ragionarci su e aggirare il problema considerando un'unità di tempo piuttosto larga e consona a quello che ci interessa a noi. Questa finestra temporale potrebbe essere proprio lunga 90 minuti! In questo modo avremmo risolto la maggior parte dei problemi! 
+Ma è un distrastro! Non ne va bene una! ... Ma lo è veramente? Potremmo ragionarci su e aggirare il problema considerando un'unità di tempo piuttosto larga e consona a quello che ci interessa a noi. Questa finestra temporale potrebbe essere proprio lunga 90 minuti e assumere così indipendenza! In questo modo avremmo risolto la maggior parte dei problemi! 
  
 
 <div style="align: center; text-align:center;">
     <img src="http://www.nov-art.eu/img/92MinutiDiApplausi.gif"  class="center">
 	<div class="caption"><small>Qui ci vogliono 92 minuti di applausi! (meglio 90...)</small></div>
 </div>
-sacfas
+
+
 
 
 
