@@ -86,6 +86,6 @@ Ma è un distrastro! Non ne va bene una! ... Ma lo è veramente? Potremmo ragion
 
 
 Quindi possiamo fare un breve confronto:
-{% include /prova/home_obs_teo_poisson.html %}
+{% include /Articolo1/home_obs_teo_poisson.html %}
 
 
