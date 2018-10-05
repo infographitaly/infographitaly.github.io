@@ -1,0 +1,42 @@
+[
+  {
+    "Categoria": 0,
+    "Osservati": 101,
+    "Teorici": 88.6688
+  },
+  {
+    "Categoria": 1,
+    "Osservati": 120,
+    "Teorici": 129.0364
+  },
+  {
+    "Categoria": 2,
+    "Osservati": 86,
+    "Teorici": 93.891
+  },
+  {
+    "Categoria": 3,
+    "Osservati": 46,
+    "Teorici": 45.5454
+  },
+  {
+    "Categoria": 4,
+    "Osservati": 17,
+    "Teorici": 16.5701
+  },
+  {
+    "Categoria": 5,
+    "Osservati": 6,
+    "Teorici": 4.8228
+  },
+  {
+    "Categoria": 6,
+    "Osservati": 3,
+    "Teorici": 1.1697
+  },
+  {
+    "Categoria": 7,
+    "Osservati": 1,
+    "Teorici": 0.2432
+  }
+]
