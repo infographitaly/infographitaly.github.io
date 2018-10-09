@@ -119,16 +119,22 @@ for state in ['Home','Away']:
 
     chi2_stat, p_val = chisquare(np.array(obs), np.array(exp), ddof=0)
     print("==="+state+"===")    
+    print("===Chi2 Stat===")
+    print(chi2_stat)
     print("===P-Value===")
     print(p_val)
 	
 	
 ===Home===
+===Chi2 Stat===
+8.533080509475663
 ===P-Value===
-0.288
+0.28793818912205194
 ===Away===
+===Chi2 Stat===
+8.167882410677105
 ===P-Value===
-0.318
+0.31802337146494697
 
 ```
 
