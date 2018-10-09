@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 	
@@ -13,10 +14,16 @@ body {
 }
 
 
+.type-selector {
+font-size: 13px;
+  background: #ddd;
+}
 
 .type-selector label {
+  margin: 0px 10px;
   cursor: pointer;
-}	
+ font-size: 12px;
+}		
 	</style>	
 	
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -25,8 +32,8 @@ body {
 <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
 <div class="type-selector">
   Seleziona il dato da visualizzare:
-  <label><input type="radio" name="type" value="chartData_home" onclick="setType(this.value);" checked="checked" /> Casa</label>
-  <label><input type="radio" name="type" value="chartData_away" onclick="setType(this.value);" /> Trasferta</label>
+  <label><input type="radio" name="type" value="chartData_home" onclick="setType(this.value);" checked="checked" /> <b>Casa</b></label>
+  <label><input type="radio" name="type" value="chartData_away" onclick="setType(this.value);" /> <b>Trasferta</b></label>
 </div>
 <div id="chartdiv" class="chartdiv" style="display: block;"></div>
 
