@@ -90,16 +90,17 @@ Quindi possiamo fare un breve confronto:
 
 
 Effettivamente l'andamento tra i valori calcolati e quelli misurati sembrano avere lo stesso...ma questo non basta, poiché dobbiamo affidarci al test del chi quadro per confermare la seguente ipotesi nulla
-'''
+```
 La distribuzione dei goal totali seguono approssimativamente una distribuzione di Poisson.
-'''
+```
 Fermi fermi fermi
 Abbiamo detto un sacco di cose in una frase! Ipotesi nulla?! test del chicchirichì?!
 Iniziamo con il dire che il test del chi quadro è un test in statistica che usa la variabile $$chi$$ elevata al quadrato per accettare o no l'ipotesi nulla. Ok, ma cos'è l'ipotesi nulla? Diciamo che
 assumiamo una certa ipotesi di partenza e che vogliamo verificarla, allora questa possiamo considerarla come ipotesi nulla (o zero) [per un dettaglio maggiore consultare](http://www.quadernodiepidemiologia.it/epi/assoc/pro_sig.htm).
 Senza aggiungere ulteriori formule, vediamo cosa abbiamo ottenuto:
 Questo è lo script python:
-'''
+
+```
 from scipy.stats import chisquare
 
 for state in ['Home','Away']:
@@ -129,7 +130,7 @@ for state in ['Home','Away']:
 ===P-Value===
 0.318
 
-'''
+```
 Il valore ottenuto è il <i>p-value</i> ovvero un parametro che indica la probabilità di ottenere un risultato uguale o "più estremo" di quello osservato, supposta vera l'ipotesi nulla.
 Fissando il p-value a 0.05 e consultando le [tavole della distribuzione del chi quadrato](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf), per 7 gradi di liberà possiamo accettare per entrambi i casi ampiamente l'ipotesi nulla.
 <div style="align: center; text-align:center;">
