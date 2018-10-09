@@ -128,10 +128,11 @@ for state in ['Home','Away']:
 ===Away===
 ===P-Value===
 0.318
+
 '''
 Il valore ottenuto è il <i>p-value</i> ovvero un parametro che indica la probabilità di ottenere un risultato uguale o "più estremo" di quello osservato, supposta vera l'ipotesi nulla.
-Fissando il p-value a 0.05 e consultando le [tavole della distribuzione del chi quadrato](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf), per 7 gradi di liberà possiamo accettare ampiamente l'ipotesi nulla.
+Fissando il p-value a 0.05 e consultando le [tavole della distribuzione del chi quadrato](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf), per 7 gradi di liberà possiamo accettare per entrambi i casi ampiamente l'ipotesi nulla.
 <div style="align: center; text-align:center;">
-    <img src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif"  class="center">
+    <img src="https://i.gifer.com/Fh5.gif"  class="center">
 	<div class="caption"><small>Felicità!</small></div>
 </div>
