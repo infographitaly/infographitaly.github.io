@@ -131,8 +131,12 @@ for state in ['Home','Away']:
 0.318
 
 ```
-Il valore ottenuto è il <i>p-value</i> ovvero un parametro che indica la probabilità di ottenere un risultato uguale o "più estremo" di quello osservato, supposta vera l'ipotesi nulla.
-Fissando il p-value a 0.05 e consultando le [tavole della distribuzione del chi quadrato](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf), per 7 gradi di liberà possiamo accettare per entrambi i casi ampiamente l'ipotesi nulla.
+
+
+Questo ci dice che, per esempio, nel caso dei gol in casa i valori di χ quadro sono 8.53308 con 7 gradi di libertà e un p-value $$(P(> X^2) = 0.28794)$$,
+ il ché significa che la probabilità del valore di chi quadro nelle [tavole della distribuzione del chi quadrato](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf) di essere maggiore è
+ del ≈ 29%. Perciò è possibile dire che c'è il 29% di possibilità che le due distribuzioni di valori siano uguali e che quindi l'ipotesi nulla può essere accettata!
+
 <div style="align: center; text-align:center;">
     <img src="https://i.gifer.com/Fh5.gif"  class="center">
 	<div class="caption"><small>Felicità!</small></div>
