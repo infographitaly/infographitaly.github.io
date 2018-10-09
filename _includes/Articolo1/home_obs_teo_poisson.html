@@ -1,127 +1,142 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>chart created with amCharts | amCharts</title>
-		<meta name="description" content="chart created using amCharts live editor" />
-		
-		<!-- amCharts javascript sources -->
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+	
+    <style>
+body {
+  font-family: Verdana;
+}
+
+.chartdiv {
+  width: 100%;
+  height: 300px;
+  font-size: 11px;
+}
+
+.type-selector {
+  padding: 10px;
+  background: #ddd;
+}
+
+.type-selector label {
+  margin: 0px 10px;
+  cursor: pointer;
+}	
+	</style>	
+	
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+<div class="type-selector">
+  Seleziona il dato da visualizzare:
+  <label><input type="radio" name="type" value="chartData_home" onclick="setType(this.value);" checked="checked" /> Casa</label>
+  <label><input type="radio" name="type" value="chartData_away" onclick="setType(this.value);" /> Trasferta</label>
+</div>
+<div id="chartdiv" class="chartdiv" style="display: block;"></div>
+
 		
 
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
-			AmCharts.makeChart("chartdiv",
-				{
-					"type": "serial",
-					"categoryField": "Categoria",
-					"sequencedAnimation": false,
-					"startDuration": 1,
-					"processCount": 997,
-					"theme": "default",
-					"categoryAxis": {
-						"title": "Numero di gol"
-					},
-					"trendLines": [],
-					"graphs": [
-						{
-							"balloonText": "Valore osservato di [[category]]:[[value]]",
-							"bulletBorderThickness": 0,
-							"columnWidth": 0.83,
-							"fillAlphas": 1,
-							"gapPeriod": 0,
-							"id": "AmGraph-1",
-							"labelPosition": "middle",
-							"labelText": "[[value]]",
-							"maxBulletSize": 62,
-							"minBulletSize": 0,
-							"showBulletsAt": "open",
-							"tabIndex": 0,
-							"title": "Osservati",
-							"type": "column",
-							"valueField": "Osservati"
-						},
-						{
-							"animationPlayed": true,
-							"balloonText": "Valore teorico di [[category]]:[[value]]",
-							"bullet": "square",
-							"id": "AmGraph-2",
-							"labelText": "[[value]]",
-							"lineThickness": 2,
-							"negativeBase": -2,
-							"title": "Teorici",
-							"valueField": "Teorici"
-						}
-					],
-					"guides": [],
-					"valueAxes": [
-						{
-							"id": "ValueAxis-1",
-							"title": "Frequenza dei gol",
-							"titleFontSize": 13,
-							"titleRotation": 270
-						}
-					],
-					"allLabels": [],
-					"balloon": {},
-					"legend": {
-						"enabled": true,
-						"useGraphSettings": true
-					},
-					"titles": [
-						{
-							"id": "Title-1",
-							"size": 15,
-							"text": "Valori osservati Vs teorici"
-						}
-					],
-					"dataProvider": [
-						{
-							"Categoria": "0",
-							"Osservati": "101",
-							"Teorici": "88.6688"
-						},
-						{
-							"Categoria": "1",
-							"Osservati": "120",
-							"Teorici": "129.0364"
-						},
-						{
-							"Categoria": "2",
-							"Osservati": "86",
-							"Teorici": "93.8910"
-						},
-						{
-							"Categoria": "3",
-							"Osservati": "46",
-							"Teorici": "45.5454"
-						},
-						{
-							"Categoria": "4",
-							"Osservati": "17",
-							"Teorici": "16.5701"
-						},
-						{
-							"Categoria": "5",
-							"Osservati": "6",
-							"Teorici": "4.8228"
-						},
-						{
-							"Categoria": "6",
-							"Osservati": "3",
-							"Teorici": "1.1697"
-						},
-						{
-							"Categoria": "7",
-							"Osservati": "1",
-							"Teorici": "0.2432"
-						},
-						{
-							"Categoria": ""
-						}
-					]
-				}
-			);
+
+// set chart data
+
+
+
+var chartData_home = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
+var chartData_away = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
+
+
+// create serial chart
+var chart = AmCharts.makeChart("chartdiv", {
+	"type": "serial",
+	"dataLoader": {"url": "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json"},
+	"balloon": {
+				"adjustBorderColor": false,
+				"horizontalPadding": 10,
+				"verticalPadding": 8,
+				"color": "#ffffff"},
+	"graphs": [
+		{"animationPlayed": true,
+		"balloonText": "[[title]]: [[value]]",
+		"id": "AmGraph-2",
+		"fillAlphas": 0.8,
+		"title": "Teorici",
+		"type": "column",
+		"valueField": "Teorici"},
+		
+		{"animationPlayed": true,
+		"balloonText": "[[title]]: [[value]]",
+		"id": "AmGraph-1",
+		"lineThickness": 3,
+		"bulletSize": 7,
+		"bulletBorderAlpha": 1,
+		"bulletBorderThickness": 3,
+		"fillAlphas": 0,
+		"lineAlpha": 1,
+		"title": "Osservati",
+		"type": "line",
+		"valueField": "Osservati",
+		"bullet": "round"}
+			],
+	"valueAxes": [
+		{
+			"id": "ValueAxis-1",
+			"title": "Frequenza Gol",
+			"titleFontSize": 13,
+			"titleRotation": 270
+		}],
+	"categoryAxis": {"title": "Numero Gol"},
+	"legend":[
+		{                       
+		"useGraphSettings": false,
+		"verticalGap":0,
+		}],
+	"titles": [
+		{
+			"id": "Title-1",
+			"size": 15,
+			"text": "Valori osservati Vs teorici"
+		}],
+	"startDuration": 1,
+	"gridAboveGraphs": true,
+	"categoryField": "Categoria"
+});
+
+
+
+
+function setType(data) {
+  switch (data) {
+    case 'chartData_home':
+		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
+		chart.dataLoader.loadData()
+		console.log(chart.dataLoader);
+		chart.validateNow();
+		break;
+
+    case 'chartData_away':
+		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
+		chart.dataLoader.loadData()
+		console.log("away");
+		chart.validateNow();
+		break;
+
+  }
+
+
+  document.getElementById('chartdiv').style.display = 'block';
+  chart.invalidateSize();
+  chart.animateAgain();
+}
+						
+		
+		
+		
+
+				
+
 		</script>
 	</head>
 	<body>
