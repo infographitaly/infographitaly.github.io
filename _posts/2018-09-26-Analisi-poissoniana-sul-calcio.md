@@ -70,6 +70,10 @@ Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotes
 
 Le due medie sono diverse
 {: .notice--primary}
+
+
+
+
 Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student. BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA
 {% capture notice-text %}
 W. S. Gosset è stato un chimico e matematico agli inizi del 900. Amico di [Pearson](http://www-history.mcs.st-andrews.ac.uk/Biographies/Pearson.html), lavorò alla Guiness ed è lì che sviluppò il t-test.
