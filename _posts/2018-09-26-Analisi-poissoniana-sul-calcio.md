@@ -102,10 +102,12 @@ print(t_stud,"/",p_val)
 I valori ottenuti sono:
 
 | Valori   | Casa | Trasferta |
+| ------        | ------- | ----- | 
 | Media        | 1.45526 | 1.22105 |
 | Varianza        | 1.720958 | 1.41275 |
 
 | Valori   |  |
+| ------        | ------- | 
 | T-Student        | 2.04783 |
 | P-Value        | 0.04092 |
 
