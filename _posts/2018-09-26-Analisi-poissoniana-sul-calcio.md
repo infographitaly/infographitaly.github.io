@@ -82,11 +82,7 @@ fu proibito di
   <h4>Info box</h4>
   {{ notice-text | markdownify }}
 </div>
-
-
-
-
- e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
+e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
 In principio quindi dovremmo considerare anche questo fattore, ma per passeremo oltre e (forse) ci torneremo più in la.
 A questo punto possiamo introdurre la distribuzione di Poisson.
 <div style="align: center; text-align:center;">
