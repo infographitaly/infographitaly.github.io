@@ -72,7 +72,7 @@ Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor Willia
 
 
 
-**Note:**
+<h2>**Note:**</h2>
 Student era Veramente una brava persona
 {: .notice--warning .align-right}
 
