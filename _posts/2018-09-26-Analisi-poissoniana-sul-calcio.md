@@ -72,9 +72,17 @@ Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor Willia
 
 
 
-<h2>**Note:**</h2>
-Student era Veramente una brava persona
-{: .notice--warning .align-right}
+{% capture notice-text %}
+You can also add the `.notice` class to a `<div>` element.
+
+* Bullet point 1
+* Bullet point 2
+{% endcapture %}
+
+<div class="notice--info align-right">
+  <h4>Notice Headline:</h4>
+  {{ notice-text | markdownify }}
+</div>
 
 
 
