@@ -58,7 +58,18 @@ Media Gol in casa    1.45526
 Media Gol fuori casa    1.22105
 ```
 AH!
-Possiamo subito notare una caratteristica di questi dati! La media gol in casa è maggiore che fuori casa e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
+Possiamo subito notare una caratteristica di questi dati! La media gol in casa è maggiore che fuori casa...ma come sempre dobbiamo affidarci a qualcosa di oggettivo per sapere se ciò è vero!
+Quindi facciamo un'ipotesi, che possiamo chiamare <i>ipotesi nulla</i>, e diciamo che 
+```
+La media gol in casa è uguale alla media dei gol segnati fuori casa.
+```
+Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotesi alternativa</i>
+```
+Le due medie sono diverse
+```
+Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
+<p class = "text-right"> Student era Veramente una brava persona </p>
+ e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
 In principio quindi dovremmo considerare anche questo fattore, ma per passeremo oltre e (forse) ci torneremo più in la.
 A questo punto possiamo introdurre la distribuzione di Poisson.
 <div style="align: center; text-align:center;">
@@ -147,3 +158,8 @@ Questo ci dice che, per esempio, nel caso dei gol in casa i valori di $$\chi$$ q
     <img src="https://i.gifer.com/Fh5.gif"  class="center">
 	<div class="caption"><small>Felicità!</small></div>
 </div>
+
+## Andiamo avanti...
+Procediamo e cerchiamo di complicare il modello. Quello che abbiamo ottenuto è sapere che la distribuzione delle frequenze dei gol segue una distribuzione di Poisson.
+ Ma come ci può aiutare a predirre la futura vincitrice della serie A?
+
