@@ -103,8 +103,10 @@ I valori ottenuti sono:
 
 ===mean value Home/mean value Away===
 1.4552631578947368 / 1.2210526315789474
+
 ===var value Home/var value Away===
 1.720948479377864 / 1.4127482294125846
+
 ===T-Student/P-Value===
 2.047829164270968 / 0.04092175145867003
 {: .notice--success}
