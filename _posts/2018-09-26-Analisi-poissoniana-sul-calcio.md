@@ -69,7 +69,15 @@ Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotes
 Le due medie sono diverse
 ```
 Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
-**Note:**Student era Veramente una brava persona{: .notice--warning}
+
+
+
+**Note:**Student era Veramente una brava persona
+{: .notice--warning}
+
+
+
+
  e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
 In principio quindi dovremmo considerare anche questo fattore, ma per passeremo oltre e (forse) ci torneremo più in la.
 A questo punto possiamo introdurre la distribuzione di Poisson.
