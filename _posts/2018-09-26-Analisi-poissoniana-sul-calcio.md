@@ -64,24 +64,21 @@ Quindi facciamo un'ipotesi, che possiamo chiamare <i>ipotesi nulla</i>, e diciam
 
 
 La media gol in casa è uguale alla media dei gol segnati fuori casa.
-{: .notice--primary}
+{: .notice--success}
 Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotesi alternativa</i>
 
 
 Le due medie sono diverse
-{: .notice--primary}
+{: .notice--success}
 
-
-
-
-Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student. BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA
+Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
 {% capture notice-text %}
 W. S. Gosset è stato un chimico e matematico agli inizi del 900. Amico di [Pearson](http://www-history.mcs.st-andrews.ac.uk/Biographies/Pearson.html), lavorò alla Guiness ed è lì che sviluppò il t-test.
 Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della produzione della birra, per prevenire la fuga di informazioni la società impedì ai suoi dipendenti la pubblicazione di articoli contenente informazioni sensibili.
 Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
 fu proibito di 
 {% endcapture %}
-<div class="notice--info align-right text-right">
+<div class="notice--info align-right">
   <h4>Info box</h4>
   {{ notice-text | markdownify }}
 </div>
