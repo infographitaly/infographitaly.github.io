@@ -74,8 +74,6 @@ Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor Willia
 
 
 W. S. Gosset è stato un chimico e matematico agli inizi del 900. Amico di [Pearson](http://www-history.mcs.st-andrews.ac.uk/Biographies/Pearson.html), lavorò alla Guiness ed è lì che sviluppò il t-test.
-Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della produzione della birra, per prevenire la fuga di informazioni la società impedì ai suoi dipendenti la pubblicazione di articoli contenente informazioni sensibili.
-Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
 {: .notice--primary .align-right}
 
 
