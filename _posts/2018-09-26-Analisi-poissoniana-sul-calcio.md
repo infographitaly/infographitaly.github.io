@@ -82,6 +82,32 @@ fu proibito di
   <h4>Info box</h4>
   {{ notice-text | markdownify }}
 </div>
+Il test di student, noto anche come t-test, aiuta a capire se la differenza tra due medie è significativa o è dovuta al caso. Per fare ciò, va calcolato il valore <i>t</i> e confrontato i valori riportati nelle [tavole](http://stat.unicas.it/vistoccoDownload/stat/materiale/tStudent.pdf).
+Dalla libreria di python <i>scipy</i> usiamo la funzione ttest_ind_from_stats del modulo <i>stats</i>. Calcoliamo i valori medi e le varianze dei gol fuori casa e in casa,
+```
+from scipy.stats import ttest_ind_from_stats
+mean_home = Partite_1718['FTHG'].mean() #Calolo dei valori medi
+mean_away = Partite_1718['FTAG'].mean() #
+var_home = Partite_1718['FTHG'].var()   #Calcolo delle varianze
+var_away = Partite_1718['FTAG'].var()   #
+dof = len(Partite_1718['FTHG'])+len(Partite_1718['FTAG'])-2
+t_stud, p_val = ttest_ind_from_stats(mean_home,var_home,dof,mean_away,var_away,dof)
+print("===mean value Home/mean value Away===")
+print(mean_home,"/",mean_away)
+print("===var value Home/var value Away===")
+print(var_home,"/",var_away)
+print("===T-Student/P-Value===")
+print(t_stud,"/",p_val)
+```
+I valori ottenuti sono:
+
+===mean value Home/mean value Away===
+1.4552631578947368 / 1.2210526315789474
+===var value Home/var value Away===
+1.720948479377864 / 1.4127482294125846
+===T-Student/P-Value===
+2.047829164270968 / 0.04092175145867003
+{: .notice--success}
 
 
 
