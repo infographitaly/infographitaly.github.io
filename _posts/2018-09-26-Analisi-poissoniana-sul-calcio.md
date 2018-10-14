@@ -61,13 +61,15 @@ Media Gol fuori casa    1.22105
 AH!
 Possiamo subito notare una caratteristica di questi dati! La media gol in casa è maggiore che fuori casa...ma come sempre dobbiamo affidarci a qualcosa di oggettivo per sapere se ciò è vero!
 Quindi facciamo un'ipotesi, che possiamo chiamare <i>ipotesi nulla</i>, e diciamo che 
-```
+
+
 La media gol in casa è uguale alla media dei gol segnati fuori casa.
-```
+{: .notice--primary}
 Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotesi alternativa</i>
-```
+
+
 Le due medie sono diverse
-```
+{: .notice--primary}
 Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
 
 
