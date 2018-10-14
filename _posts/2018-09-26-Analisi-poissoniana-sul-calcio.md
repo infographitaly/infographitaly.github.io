@@ -70,18 +70,20 @@ Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotes
 
 Le due medie sono diverse
 {: .notice--primary}
-Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
+Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student. BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA
 {% capture notice-text %}
 W. S. Gosset è stato un chimico e matematico agli inizi del 900. Amico di [Pearson](http://www-history.mcs.st-andrews.ac.uk/Biographies/Pearson.html), lavorò alla Guiness ed è lì che sviluppò il t-test.
 Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della produzione della birra, per prevenire la fuga di informazioni la società impedì ai suoi dipendenti la pubblicazione di articoli contenente informazioni sensibili.
 Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
 fu proibito di 
 {% endcapture %}
-
 <div class="notice--info align-right">
   <h4>Info box</h4>
   {{ notice-text | markdownify }}
 </div>
+
+
+
 e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
 In principio quindi dovremmo considerare anche questo fattore, ma per passeremo oltre e (forse) ci torneremo più in la.
 A questo punto possiamo introdurre la distribuzione di Poisson.
