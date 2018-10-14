@@ -101,15 +101,15 @@ print(t_stud,"/",p_val)
 ```
 I valori ottenuti sono:
 
-===mean value Home/mean value Away===
-1.4552631578947368 / 1.2210526315789474
+| Valori   | Casa | Trasferta |
+| Media        | 1.45526 | 1.22105 |
+| Varianza        | 1.720958 | 1.41275 |
 
-===var value Home/var value Away===
-1.720948479377864 / 1.4127482294125846
+| Valori   |  |
+| T-Student        | 2.04783 |
+| P-Value        | 0.04092 |
 
-===T-Student/P-Value===
-2.047829164270968 / 0.04092175145867003
-{: .notice--success}
+
 
 
 
