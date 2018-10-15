@@ -170,24 +170,18 @@ noto come test del chi quadro, il quale, in caso, conferma la seguente ipotesi n
 
 La distribuzione dei goal totali seguono approssimativamente una distribuzione di Poisson.
 {: .notice--success}
-Fermi fermi fermi
-Abbiamo detto un sacco di cose in una frase! Ipotesi nulla?! test del chi?!
+Fermiamoci un attimo e parliamo del test del chi quadro. Questo è un test in statistica che usa la variabile $$chi^2$$ per cercare di capire se accettare o no l'ipotesi nulla in un qualche modo oggettivo.
 <div class="dida_right">
   <h4>Info box</h4>
-Ok direi che è arrivato il momento di spiegare in cosa consiste l'ipotesi nulla. 
-Diciamo che
-assumiamo una certa ipotesi di partenza e che vogliamo verificarla, allora questa possiamo considerarla come ipotesi nulla 
-(o zero) e viene indicata con <b>H0</b> [per un dettaglio maggiore consultare](http://www.quadernodiepidemiologia.it/epi/assoc/pro_sig.htm). 
-Contrapposta all'ipotesi a questa ipotesi vi è quella <i>alternativa</i> e viene indicata con H1.
+Il test del chi quadro è un test necessario nel caso si voglia verificare che le frequenze dei valori osservati abbiano un andamento simile alle frequenze teoriche di una distribuzione di probabilità scelta.
+La formula per ottenere il valore $$\chi ^{2}$$ è
+$$
+\chi ^{2}=\sum _{{i=1}}^{k}{(o_{i}-e_{i})^{2} \over e_{i}}  
+$$
+dove $$o_{i}$$ e $$e_{i}$$ sono, rispettivamente, le frequenze osservate e teoriche. Questo test fu ideato da Karl Pearson, padre del Pearson citato prima!
 </div>
-Iniziamo con il dire che il test del chi quadro è un test in statistica che usa la variabile $$chi$$ elevata al quadrato per accettare o no l'ipotesi nulla.
 
 
-
-
-
-
- Ok, ma cos'è l'ipotesi nulla? 
 Senza aggiungere ulteriori formule, vediamo cosa abbiamo ottenuto:
 Questo è lo script python:
 
