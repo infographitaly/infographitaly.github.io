@@ -176,7 +176,7 @@ Per poter dire se questa affermazione sia vero o meno, dobbiamo ricorrere al tes
 Il test del chi quadro è un test necessario nel caso si voglia verificare che le frequenze dei valori osservati abbiano un andamento simile alle frequenze teoriche di una distribuzione di probabilità scelta.
 La formula per ottenere il valore $$\chi^{2}$$ è
 $$
-\chi^{2}=\sum _{i=1}^{k}{(o_{i}-e_{i})^{2} \over e_{i}}  
+\chi^{2}=\sum _{i=1}^{k}
 $$
 dove $$o_{i}$$ e $$e_{i}$$ sono, rispettivamente, le frequenze osservate e teoriche. Questo test fu ideato da Karl Pearson, padre del Pearson citato prima!
 </div>Partendo dalle frequenze delle osservazioni misurate (cioè quante volte un certo numero di gol sono stati effettuati nelle partite), 
