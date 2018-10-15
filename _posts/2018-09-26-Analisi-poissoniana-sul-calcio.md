@@ -172,9 +172,6 @@ La distribuzione dei goal totali seguono approssimativamente una distribuzione d
 {: .notice--success}
 Fermi fermi fermi
 Abbiamo detto un sacco di cose in una frase! Ipotesi nulla?! test del chi?!
-Iniziamo con il dire che il test del chi quadro è un test in statistica che usa la variabile $$chi$$ elevata al quadrato per accettare o no l'ipotesi nulla.
-
-
 <div class="dida_right">
   <h4>Info box</h4>
 Ok direi che è arrivato il momento di spiegare in cosa consiste l'ipotesi nulla. 
@@ -183,6 +180,10 @@ assumiamo una certa ipotesi di partenza e che vogliamo verificarla, allora quest
 (o zero) e viene indicata con <b>H0</b> [per un dettaglio maggiore consultare](http://www.quadernodiepidemiologia.it/epi/assoc/pro_sig.htm). 
 Contrapposta all'ipotesi a questa ipotesi vi è quella <i>alternativa</i> e viene indicata con H1.
 </div>
+Iniziamo con il dire che il test del chi quadro è un test in statistica che usa la variabile $$chi$$ elevata al quadrato per accettare o no l'ipotesi nulla.
+
+
+
 
 
 
