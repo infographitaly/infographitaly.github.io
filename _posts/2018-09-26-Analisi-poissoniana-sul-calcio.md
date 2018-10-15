@@ -119,10 +119,28 @@ I valori ottenuti sono:
 </tr>
 </tbody></table>
 In particolare...
-| Valori   |  |
-| ------        | ------- | 
-| T-Student        | 2.04783 |
-| P-Value        | 0.04092 |
+
+
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Valori</th>
+<th title="Field #2">Casa</th>
+<th title="Field #3">Trasferta</th>
+
+</tr></thead>
+<tbody><tr>
+<td >T-Student</td>
+<td>2.04783</td>
+
+</tr>
+
+<tr>
+<td >P-Value</td>
+<td>0.04092</td>
+
+
+</tr>
+</tbody></table>
+
 
 Condiserando che per 
 
