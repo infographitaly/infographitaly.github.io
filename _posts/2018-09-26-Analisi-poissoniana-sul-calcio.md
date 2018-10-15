@@ -248,4 +248,31 @@ Questo ci dice che, per esempio, nel caso dei gol in casa i valori di $$\chi$$ q
 ## Andiamo avanti...
 Procediamo e cerchiamo di costruire il modello. Quello che abbiamo è che che la distribuzione delle frequenze dei gol segue una distribuzione di Poisson.
  Ma come ci può aiutare a predirre la futura vincitrice della serie A?
+Possiamo calcolare la probabilità di vittoria di una squadra rispetto ad un'altra, costruendo un modello generalizzato di regressione lineare Poissoniano. 
+Fermiamoci un attimo e respiriamo
+Il modello di regressione lineare è un modo generale per cercare di trovare funzione che rappresenti tutti punti in un grafico. Se i punti non sono distribuiti normalmente (cioè non seguono una distribuzione di Gauss),
+allora dobbiamo ricorrere al modello <b>generalizzato</b> di regressione lineare e poiché nel nostro caso i punti seguono una distribuzione di Poisson, allora ecco che useremo il glm Poissoniano!
+Lo script python che farà ciò è:
+```
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+goal_model_data = pd.concat([Partite_1718[['HomeTeam','AwayTeam','FTHG']].assign(home=1).rename(
+            columns={'HomeTeam':'team', 'AwayTeam':'opponent','FTHG':'goals'}),
+           Partite_1718[['AwayTeam','HomeTeam','FTAG']].assign(home=0).rename(
+            columns={'AwayTeam':'team', 'HomeTeam':'opponent','FTAG':'goals'})])
+poisson_model = smf.glm(formula="goals ~ home + team + opponent", data=goal_model_data, 
+                        family=sm.families.Poisson()).fit()
+poisson_model.summary()
+```
+
+Per ottenere
+
+{% include /Articolo1/Tabella_modello_1.html %}
+{% include /Articolo1/Tabella_modello_2.html %}
+
+Supponiamo di voler simulare l'esito di una partita tra due squadre come, ad esempio, la Juventus e il Napoli, rispettivamente, prima e seconda classificata del campionato italiano di Serie A.
+Consideriamo inoltre che, per semplicità, i possibili risultati siano dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
+Allora quello che avremo è una matrice di probabilità, che sembra una cosa complicata ma in realtà è molto semplice: lunghe le righe abbiamo i risultati del Napoli, mentre sulle colonne quelle della Juventus.
+
 

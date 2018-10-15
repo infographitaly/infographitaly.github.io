@@ -1,0 +1,504 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../Tabella_modello.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:"\.";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../Tabella_modello.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=657 style='border-collapse:
+ collapse;table-layout:fixed;width:493pt'>
+ <col width=273 style='mso-width-source:userset;mso-width-alt:9699;width:205pt'>
+ <col width=64 span=6 style='width:48pt'>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 width=273 style='height:14.4pt;width:205pt'>Generalized Linear
+  Model Regression Results</td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Dep. Variable:</td>
+  <td>goals</td>
+  <td>No. Obser<span style='display:none'>vations:</span></td>
+  <td align=right>760</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Model:</td>
+  <td>GLM</td>
+  <td>Df Residua<span style='display:none'>ls:</span></td>
+  <td align=right>720</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Model Family:</td>
+  <td>Poisson</td>
+  <td>Df Model:</td>
+  <td align=right>39</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Link Function:</td>
+  <td>log</td>
+  <td>Scale:</td>
+  <td class=xl65 align=right>10.000</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Method:</td>
+  <td>IRLS</td>
+  <td>Log-Likelih<span style='display:none'>ood:</span></td>
+  <td>-1046.0</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Date:</td>
+  <td>Mon, 15 O<span style='display:none'>ct 2018</span></td>
+  <td>Deviance:</td>
+  <td>774.00</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Time:</td>
+  <td class=xl66 align=right>23:54:23</td>
+  <td>Pearson c<span style='display:none'>hi2:</span></td>
+  <td>668.</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>No. Iterations:</td>
+  <td align=right>5</td>
+  <td>Covarianc<span style='display:none'>e Type:</span></td>
+  <td colspan=2 style='mso-ignore:colspan'>nonrobust</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 colspan=7 style='height:14.4pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td>coef</td>
+  <td>std err</td>
+  <td>z</td>
+  <td>P&gt;|z|</td>
+  <td>[0.025</td>
+  <td>0.975]</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>Intercept</td>
+  <td>0.0462</td>
+  <td>0.213</td>
+  <td>0.217</td>
+  <td>0.828</td>
+  <td>-0.372</td>
+  <td>0.464</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Benevento]</td>
+  <td>-0.5010</td>
+  <td>0.219</td>
+  <td class=xl65 align=right>-2.287</td>
+  <td>0.022</td>
+  <td>-0.930</td>
+  <td>-0.072</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Bologna]</td>
+  <td>-0.3416</td>
+  <td>0.206</td>
+  <td class=xl65 align=right>-1.654</td>
+  <td>0.098</td>
+  <td>-0.746</td>
+  <td>0.063</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Cagliari]</td>
+  <td>-0.5251</td>
+  <td>0.219</td>
+  <td class=xl65 align=right>-2.398</td>
+  <td>0.016</td>
+  <td>-0.954</td>
+  <td>-0.096</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Chievo]</td>
+  <td>-0.4399</td>
+  <td>0.213</td>
+  <td class=xl65 align=right>-2.064</td>
+  <td>0.039</td>
+  <td>-0.858</td>
+  <td>-0.022</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Crotone]</td>
+  <td>-0.3270</td>
+  <td>0.207</td>
+  <td class=xl65 align=right>-1.583</td>
+  <td>0.113</td>
+  <td>-0.732</td>
+  <td>0.078</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Fiorentina]</td>
+  <td>-0.0469</td>
+  <td>0.190</td>
+  <td>-0.247</td>
+  <td>0.805</td>
+  <td>-0.420</td>
+  <td>0.326</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Genoa]</td>
+  <td>-0.5435</td>
+  <td>0.219</td>
+  <td class=xl65 align=right>-2.482</td>
+  <td>0.013</td>
+  <td>-0.973</td>
+  <td>-0.114</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Inter]</td>
+  <td>0.1376</td>
+  <td>0.181</td>
+  <td>0.760</td>
+  <td>0.447</td>
+  <td>-0.217</td>
+  <td>0.492</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Juventus]</td>
+  <td>0.3966</td>
+  <td>0.171</td>
+  <td class=xl65 align=right>2.320</td>
+  <td>0.020</td>
+  <td>0.061</td>
+  <td>0.732</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Lazio]</td>
+  <td>0.4578</td>
+  <td>0.170</td>
+  <td class=xl65 align=right>2.694</td>
+  <td>0.007</td>
+  <td>0.125</td>
+  <td>0.791</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Milan]</td>
+  <td>-0.0146</td>
+  <td>0.188</td>
+  <td>-0.078</td>
+  <td>0.938</td>
+  <td>-0.384</td>
+  <td>0.355</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Napoli]</td>
+  <td>0.2911</td>
+  <td>0.175</td>
+  <td class=xl65 align=right>1.664</td>
+  <td>0.096</td>
+  <td>-0.052</td>
+  <td>0.634</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Roma]</td>
+  <td>0.0566</td>
+  <td>0.184</td>
+  <td>0.307</td>
+  <td>0.759</td>
+  <td>-0.305</td>
+  <td>0.418</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Sampdoria]</td>
+  <td>0.0042</td>
+  <td>0.188</td>
+  <td>0.022</td>
+  <td>0.982</td>
+  <td>-0.365</td>
+  <td>0.374</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Sassuolo]</td>
+  <td>-0.6566</td>
+  <td>0.228</td>
+  <td class=xl65 align=right>-2.876</td>
+  <td>0.004</td>
+  <td class=xl65 align=right>-1.104</td>
+  <td>-0.209</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Spal]</td>
+  <td>-0.3597</td>
+  <td>0.208</td>
+  <td class=xl65 align=right>-1.729</td>
+  <td>0.084</td>
+  <td>-0.768</td>
+  <td>0.048</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Torino]</td>
+  <td>-0.0469</td>
+  <td>0.190</td>
+  <td>-0.247</td>
+  <td>0.805</td>
+  <td>-0.420</td>
+  <td>0.326</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Udinese]</td>
+  <td>-0.1473</td>
+  <td>0.196</td>
+  <td>-0.751</td>
+  <td>0.453</td>
+  <td>-0.532</td>
+  <td>0.237</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>team[T.Verona]</td>
+  <td>-0.6029</td>
+  <td>0.226</td>
+  <td class=xl65 align=right>-2.670</td>
+  <td>0.008</td>
+  <td class=xl65 align=right>-1.046</td>
+  <td>-0.160</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Benevento]</td>
+  <td>0.7443</td>
+  <td>0.194</td>
+  <td class=xl65 align=right>3.836</td>
+  <td>0.000</td>
+  <td>0.364</td>
+  <td class=xl65 align=right>1.125</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Bologna]</td>
+  <td>0.2708</td>
+  <td>0.212</td>
+  <td class=xl65 align=right>1.277</td>
+  <td>0.202</td>
+  <td>-0.145</td>
+  <td>0.686</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Cagliari]</td>
+  <td>0.4236</td>
+  <td>0.205</td>
+  <td class=xl65 align=right>2.064</td>
+  <td>0.039</td>
+  <td>0.021</td>
+  <td>0.826</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Chievo]</td>
+  <td>0.3932</td>
+  <td>0.207</td>
+  <td class=xl65 align=right>1.903</td>
+  <td>0.057</td>
+  <td>-0.012</td>
+  <td>0.798</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Crotone]</td>
+  <td>0.5098</td>
+  <td>0.202</td>
+  <td class=xl65 align=right>2.521</td>
+  <td>0.012</td>
+  <td>0.113</td>
+  <td>0.906</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Fiorentina]</td>
+  <td>0.1624</td>
+  <td>0.218</td>
+  <td>0.745</td>
+  <td>0.456</td>
+  <td>-0.265</td>
+  <td>0.590</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Genoa]</td>
+  <td>0.0733</td>
+  <td>0.221</td>
+  <td>0.331</td>
+  <td>0.741</td>
+  <td>-0.361</td>
+  <td>0.507</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Inter]</td>
+  <td>-0.2536</td>
+  <td>0.243</td>
+  <td class=xl65 align=right>-1.043</td>
+  <td>0.297</td>
+  <td>-0.730</td>
+  <td>0.223</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Juventus]</td>
+  <td>-0.4564</td>
+  <td>0.260</td>
+  <td class=xl65 align=right>-1.757</td>
+  <td>0.079</td>
+  <td>-0.966</td>
+  <td>0.053</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Lazio]</td>
+  <td>0.2630</td>
+  <td>0.215</td>
+  <td class=xl65 align=right>1.224</td>
+  <td>0.221</td>
+  <td>-0.158</td>
+  <td>0.684</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Milan]</td>
+  <td>0.0733</td>
+  <td>0.223</td>
+  <td>0.329</td>
+  <td>0.742</td>
+  <td>-0.363</td>
+  <td>0.510</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Napoli]</td>
+  <td>-0.2762</td>
+  <td>0.245</td>
+  <td class=xl65 align=right>-1.125</td>
+  <td>0.261</td>
+  <td>-0.757</td>
+  <td>0.205</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Roma]</td>
+  <td>-0.3279</td>
+  <td>0.248</td>
+  <td class=xl65 align=right>-1.323</td>
+  <td>0.186</td>
+  <td>-0.814</td>
+  <td>0.158</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Sampdoria]</td>
+  <td>0.4310</td>
+  <td>0.206</td>
+  <td class=xl65 align=right>2.093</td>
+  <td>0.036</td>
+  <td>0.027</td>
+  <td>0.835</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Sassuolo]</td>
+  <td>0.3860</td>
+  <td>0.207</td>
+  <td class=xl65 align=right>1.869</td>
+  <td>0.062</td>
+  <td>-0.019</td>
+  <td>0.791</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Spal]</td>
+  <td>0.3963</td>
+  <td>0.207</td>
+  <td class=xl65 align=right>1.918</td>
+  <td>0.055</td>
+  <td>-0.009</td>
+  <td>0.801</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Torino]</td>
+  <td>0.1624</td>
+  <td>0.218</td>
+  <td>0.745</td>
+  <td>0.456</td>
+  <td>-0.265</td>
+  <td>0.590</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Udinese]</td>
+  <td>0.4715</td>
+  <td>0.204</td>
+  <td class=xl65 align=right>2.311</td>
+  <td>0.021</td>
+  <td>0.072</td>
+  <td>0.871</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>opponent[T.Verona]</td>
+  <td>0.6668</td>
+  <td>0.196</td>
+  <td class=xl65 align=right>3.396</td>
+  <td>0.001</td>
+  <td>0.282</td>
+  <td class=xl65 align=right>1.052</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'>home</td>
+  <td>0.1755</td>
+  <td>0.063</td>
+  <td class=xl65 align=right>2.787</td>
+  <td>0.005</td>
+  <td>0.052</td>
+  <td>0.299</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=273 style='width:205pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
