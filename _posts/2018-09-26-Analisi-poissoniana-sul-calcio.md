@@ -106,15 +106,15 @@ I valori ottenuti sono:
 
 </tr></thead>
 <tbody><tr>
-<td align="right">Media</td>
+<td >Media</td>
 <td>1.45526</td>
-<td align="right">1.22105</td>
+<td >1.22105</td>
 </tr>
 
 <tr>
-<td align="right">Varianza</td>
+<td >Varianza</td>
 <td>1.720958</td>
-<td align="right">1.41275</td>
+<td >1.41275</td>
 
 </tr>
 </tbody></table>
