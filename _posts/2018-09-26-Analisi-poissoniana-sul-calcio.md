@@ -210,19 +210,30 @@ for state in ['Home','Away']:
     print("===P-Value===")
     print(p_val)
 	
-	
-===Home===
-===Chi2 Stat===
-8.533080509475663
-===P-Value===
-0.28793818912205194
-===Away===
-===Chi2 Stat===
-8.167882410677105
-===P-Value===
-0.31802337146494697
-
 ```
+
+Da questo breve programma, ciò che abbiamo ottenuto è
+
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Valori</th>
+<th title="Field #2">Casa</th>
+<th title="Field #3">Trasferta</th>
+</tr></thead>
+<tbody><tr>
+<td >Chi2 Stat</td>
+<td>8.53308</td>
+<td >8.16788</td>
+</tr>
+<tr>
+<td >P-Value</td>
+<td>0.28794</td>
+<td >0.31802</td>
+</tr>
+</tbody></table>
+	
+
+
+
 
 
 Questo ci dice che, per esempio, nel caso dei gol in casa i valori di $$\chi$$ quadro sono 8.53308 con 7 gradi di libertà e un p-value $$(P(> X^2) = 0.28794)$$,
