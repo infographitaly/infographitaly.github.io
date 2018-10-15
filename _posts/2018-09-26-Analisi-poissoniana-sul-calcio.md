@@ -99,10 +99,25 @@ print(t_stud,"/",p_val)
 ```
 I valori ottenuti sono:
 
-| Valori   | Casa | Trasferta |
-| ------        | ------- | ----- | 
-| Media        | 1.45526 | 1.22105 |
-| Varianza        | 1.720958 | 1.41275 |
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Valori</th>
+<th title="Field #2">Casa</th>
+<th title="Field #3">Trasferta</th>
+
+</tr></thead>
+<tbody><tr>
+<td align="right">Media</td>
+<td>1.45526</td>
+<td align="right">1.22105</td>
+</tr>
+
+<tr>
+<td align="right">Varianza</td>
+<td>1.720958</td>
+<td align="right">1.41275</td>
+
+</tr>
+</tbody></table>
 In particolare...
 | Valori   |  |
 | ------        | ------- | 
