@@ -174,7 +174,7 @@ Per poter dire se questa affermazione sia vero o meno, dobbiamo ricorrere al tes
 <div class="dida_right">
   <h4>Info box</h4>
 Il test del chi quadro è un test necessario nel caso si voglia verificare che le frequenze dei valori osservati abbiano un andamento simile alle frequenze teoriche di una distribuzione di probabilità scelta.
-La formula per ottenere il valore $$\chi ^{2}$$ è
+La formula per ottenere il valore $\chi ^{2}$ è
 $$
 \chi ^{2}=\sum _{{i=1}}^{k}{(o_{i}-e_{i})^{2} \over e_{i}}  
 $$
