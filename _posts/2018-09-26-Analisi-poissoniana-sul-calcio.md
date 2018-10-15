@@ -122,9 +122,9 @@ In particolare...
 
 
 <table class="table table-bordered table-hover table-condensed">
-<thead><tr><th title="Field #1">Valori</th>
-<th title="Field #2">Casa</th>
-<th title="Field #3">Trasferta</th>
+<thead><tr><th title="Field #1"></th>
+<th title="Field #2">Valori</th>
+
 
 </tr></thead>
 <tbody><tr>
