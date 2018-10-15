@@ -78,7 +78,7 @@ Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della pro
 Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
 fu proibito di 
 {% endcapture %}
-<div class="notice--info align-right " width="50%">
+<div class="dida_right">
   <h4>Info box</h4>
   {{ notice-text | markdownify }}
 </div>
