@@ -78,7 +78,7 @@ Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della pro
 Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
 fu proibito di 
 {% endcapture %}
-<div class="notice--info align-right">
+<div class="notice--info align-right " width="50%">
   <h4>Info box</h4>
   {{ notice-text | markdownify }}
 </div>
@@ -105,13 +105,13 @@ I valori ottenuti sono:
 | ------        | ------- | ----- | 
 | Media        | 1.45526 | 1.22105 |
 | Varianza        | 1.720958 | 1.41275 |
-
+In particolare...
 | Valori   |  |
 | ------        | ------- | 
 | T-Student        | 2.04783 |
 | P-Value        | 0.04092 |
 
-
+Condiserando che per 
 
 
 
