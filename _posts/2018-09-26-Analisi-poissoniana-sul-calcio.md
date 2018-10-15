@@ -64,12 +64,12 @@ Quindi facciamo un'ipotesi, che possiamo chiamare <i>ipotesi nulla</i>, e diciam
 
 
 La media gol in casa è uguale alla media dei gol segnati fuori casa.
-{: .notice--success}
+{: .notice--success .text-center}
 Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotesi alternativa</i>
 
 
 Le due medie sono diverse
-{: .notice--success}
+{: .notice--success .text-center}
 
 Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
 
@@ -246,6 +246,6 @@ Questo ci dice che, per esempio, nel caso dei gol in casa i valori di $$\chi$$ q
 </div>
 
 ## Andiamo avanti...
-Procediamo e cerchiamo di complicare il modello. Quello che abbiamo ottenuto è sapere che la distribuzione delle frequenze dei gol segue una distribuzione di Poisson.
+Procediamo e cerchiamo di costruire il modello. Quello che abbiamo è che che la distribuzione delle frequenze dei gol segue una distribuzione di Poisson.
  Ma come ci può aiutare a predirre la futura vincitrice della serie A?
 
