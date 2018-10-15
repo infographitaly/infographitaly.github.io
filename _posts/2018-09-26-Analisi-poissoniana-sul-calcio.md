@@ -122,11 +122,6 @@ In particolare...
 
 
 <table class="table table-bordered table-hover table-condensed">
-<thead><tr><th title="Field #1"></th>
-<th title="Field #2">Valori</th>
-
-
-</tr></thead>
 <tbody><tr>
 <td >T-Student</td>
 <td>2.04783</td>
