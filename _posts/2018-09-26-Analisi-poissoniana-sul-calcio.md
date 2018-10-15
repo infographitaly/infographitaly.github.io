@@ -165,12 +165,14 @@ Quindi possiamo fare un breve confronto:
 {% include /Articolo1/home_obs_teo_poisson.html %}
 
 
-Effettivamente l'andamento tra i valori calcolati e quelli misurati sembrano avere lo stesso...ma questo non basta, poiché dobbiamo affidarci ancora una volta ad un test, 
-noto come test del chi quadro, il quale, in caso, conferma la seguente ipotesi nulla
+Effettivamente l'andamento tra i valori calcolati e quelli misurati sembrano essere simili...ma questo non basta, poiché dobbiamo affidarci ancora una volta ad un test. 
+Iniziamo con l'affermare, quindi, che 
 
 La distribuzione dei goal totali seguono approssimativamente una distribuzione di Poisson.
 {: .notice--success}
-Fermiamoci un attimo e parliamo del test del chi quadro. Questo è un test in statistica che usa la variabile $$chi^2$$ per cercare di capire se accettare o no l'ipotesi nulla in un qualche modo oggettivo.
+Per poter dire se questa affermazione sia vero o meno, dobbiamo ricorrere al test del chi quadro. Partendo dalle frequenze delle osservazioni misurate (cioè quante volte un certo numero di gol sono stati effettuati nelle partite), 
+ottenendo le frequenze teoriche, possiamo vedere quante queste differiscono tra loro. Il valore $$\chi ^{2}$$ quantifica questa informazione e, tramite le tavole [tavole della distribuzione](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf)
+è possibile determinare se l'ipotesi nulla sia verificata o meno. Passando dalle parole ai fatti, vediamo lo script python usato per ottenere i risultati:
 <div class="dida_right">
   <h4>Info box</h4>
 Il test del chi quadro è un test necessario nel caso si voglia verificare che le frequenze dei valori osservati abbiano un andamento simile alle frequenze teoriche di una distribuzione di probabilità scelta.
@@ -180,10 +182,6 @@ $$
 $$
 dove $$o_{i}$$ e $$e_{i}$$ sono, rispettivamente, le frequenze osservate e teoriche. Questo test fu ideato da Karl Pearson, padre del Pearson citato prima!
 </div>
-
-
-Senza aggiungere ulteriori formule, vediamo cosa abbiamo ottenuto:
-Questo è lo script python:
 
 ```
 from scipy.stats import chisquare
