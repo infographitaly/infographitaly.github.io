@@ -103,46 +103,39 @@ I valori ottenuti sono:
 <thead><tr><th title="Field #1">Valori</th>
 <th title="Field #2">Casa</th>
 <th title="Field #3">Trasferta</th>
-
 </tr></thead>
 <tbody><tr>
 <td >Media</td>
 <td>1.45526</td>
 <td >1.22105</td>
 </tr>
-
 <tr>
 <td >Varianza</td>
 <td>1.720958</td>
 <td >1.41275</td>
-
 </tr>
 </tbody></table>
-In particolare...
 
+In particolare...
 
 <table class="table table-bordered table-hover table-condensed">
 <tbody><tr>
 <td >T-Student</td>
 <td>2.04783</td>
-
 </tr>
-
 <tr>
 <td >P-Value</td>
 <td>0.04092</td>
-
-
 </tr>
 </tbody></table>
+Abbiamo quindi ottenuto un valore di t di 2.04783 e, considerando i nostri gradi di libertà (758), allora possiamo stabilire
+che, dato il valore di p-value di 0.04 esso è minore dei valori di soglia del 95% e del 99% e, quindi possiamo rigettare l'ipotesi nulla e accettare quella alternativa.
+Quello che stiamo sostanzialmente dicendo è che i due valori medi sono "oggettivamente" differenti.
 
+Le motivazione su quesa differenza sono molteplici, come, ad esempio, il supporto dei tifosi (you'll never walk alone!).
 
-Condiserando che per 
+In principio quindi dovremmo considerare anche questo fattore del giocare in <i>Casa</i>, ma per ora passeremo oltre e (forse) ci torneremo più in la.
 
-
-
-e le motivazioni (penso) siano ovvie...una su tutte: il supporto dei propri tifosi (you'll never walk alone!).
-In principio quindi dovremmo considerare anche questo fattore, ma per passeremo oltre e (forse) ci torneremo più in la.
 A questo punto possiamo introdurre la distribuzione di Poisson.
 <div style="align: center; text-align:center;">
     <img src="https://imgs.xkcd.com/comics/poisson.jpg"  class="center">
@@ -172,14 +165,28 @@ Quindi possiamo fare un breve confronto:
 {% include /Articolo1/home_obs_teo_poisson.html %}
 
 
-Effettivamente l'andamento tra i valori calcolati e quelli misurati sembrano avere lo stesso...ma questo non basta, poiché dobbiamo affidarci al test del chi quadro per confermare la seguente ipotesi nulla
-```
+Effettivamente l'andamento tra i valori calcolati e quelli misurati sembrano avere lo stesso...ma questo non basta, poiché dobbiamo affidarci ancora una volta ad un test, 
+noto come test del chi quadro, il quale, in caso, conferma la seguente ipotesi nulla
+
 La distribuzione dei goal totali seguono approssimativamente una distribuzione di Poisson.
-```
+{: .notice--success}
 Fermi fermi fermi
-Abbiamo detto un sacco di cose in una frase! Ipotesi nulla?! test del chicchirichì?!
-Iniziamo con il dire che il test del chi quadro è un test in statistica che usa la variabile $$chi$$ elevata al quadrato per accettare o no l'ipotesi nulla. Ok, ma cos'è l'ipotesi nulla? Diciamo che
-assumiamo una certa ipotesi di partenza e che vogliamo verificarla, allora questa possiamo considerarla come ipotesi nulla (o zero) [per un dettaglio maggiore consultare](http://www.quadernodiepidemiologia.it/epi/assoc/pro_sig.htm).
+Abbiamo detto un sacco di cose in una frase! Ipotesi nulla?! test del chi?!
+Iniziamo con il dire che il test del chi quadro è un test in statistica che usa la variabile $$chi$$ elevata al quadrato per accettare o no l'ipotesi nulla.
+
+
+<div class="dida_right">
+  <h4>Info box</h4>
+Ok direi che è arrivato il momento di spiegare in cosa consiste l'ipotesi nulla. 
+Diciamo che
+assumiamo una certa ipotesi di partenza e che vogliamo verificarla, allora questa possiamo considerarla come ipotesi nulla 
+(o zero) e viene indicata con <b>H0</b> [per un dettaglio maggiore consultare](http://www.quadernodiepidemiologia.it/epi/assoc/pro_sig.htm). 
+Contrapposta all'ipotesi a questa ipotesi vi è quella <i>alternativa</i> e viene indicata con H1.
+</div>
+
+
+
+ Ok, ma cos'è l'ipotesi nulla? 
 Senza aggiungere ulteriori formule, vediamo cosa abbiamo ottenuto:
 Questo è lo script python:
 
