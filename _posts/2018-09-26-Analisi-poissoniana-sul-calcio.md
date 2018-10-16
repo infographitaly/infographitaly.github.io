@@ -270,6 +270,14 @@ Per ottenere
 
 {% include /Articolo1/Tabella_modello_1.html %}
 {% include /Articolo1/Tabella_modello_2.html %}
+Dalla prima tabella possiamo estrarre qualche informazione, come ad esempio sappiamo che la variabile dipendente sono i gol, che il numero di dati disponibili sono 760 e che la funzione usata, ovvero la fuzione link, è il logaritmo.
+Nella seconda, invece, abbiamo diverse colonne che rappresentano:
+- il coefficiente e l'errore associato
+- il valore z, pari al rapporto tra il coefficiente e l'errore associato, e il relativo P-Value
+- l'intervallo di confidenza
+Di tutti questi valori quello che sicuramente ci interessa maggiormente è il P-value, poiché ci permette di capire quale variabile influisce maggiormente: infatti se fissiamo il livello di signicatifità 
+del p-value al 5%, allora possiamo notare che sicuramente una variabile importante potrebbe essere la media gol della Juventus in casa (pari al 2%) o, anche, quello della Sampdoria fuori casa (pari al 3.6%).
+I valori predenti nella colonna <b>Coef</b> rappresentano i valori della funzione esponenziale $e^x$ 
 
 Supponiamo di voler simulare l'esito di una partita tra due squadre come, ad esempio, la Juventus e il Napoli, rispettivamente, prima e seconda classificata del campionato italiano di Serie A.
 Consideriamo inoltre che, per semplicità, i possibili risultati siano dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
