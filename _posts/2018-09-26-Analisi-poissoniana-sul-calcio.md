@@ -318,13 +318,17 @@ Allora quello che avremo è una matrice di probabilità, che sembra una cosa com
 lunghe le righe abbiamo la probabilità che il Napoli possa segnare quel numero di gol entro la fine della partita, mentre, viceversa, sulle colonne abbiamo le probabilità che la Juventus possa segnare quel goal.
 Facendo la simulazione abbiamo:
 <table class="table table-bordered table-hover table-condensed">
-<thead><tr><th title="Field #1">Napoli\Juventus</th>
-<th title="Field #2">0</th>
-<th title="Field #3">1</th>
-<th title="Field #3">2</th>
-<th title="Field #3">3</th>
-</tr></thead>
-<tbody><tr>
+
+<tbody>
+<tr>
+<td >Napli\Juventus</td>
+<td>0</td>
+<td >1</td>
+<td >2</td>
+<td >3</td>
+</tr>
+
+<tr>
 <td >0</td>
 <td>0.10069245 </td>
 <td >0.089384</td>
