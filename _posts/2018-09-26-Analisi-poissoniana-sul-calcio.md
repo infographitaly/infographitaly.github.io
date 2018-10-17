@@ -310,8 +310,48 @@ ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). 
 <td >-0.2536</td>
 </tr>
 </tbody></table>
-Supponiamo di voler simulare l'esito di una partita tra due squadre come, ad esempio, la Juventus e il Napoli, rispettivamente, prima e seconda classificata del campionato italiano di Serie A.
-Consideriamo inoltre che, per semplicità, i possibili risultati siano dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
-Allora quello che avremo è una matrice di probabilità, che sembra una cosa complicata ma in realtà è molto semplice: lunghe le righe abbiamo i risultati del Napoli, mentre sulle colonne quelle della Juventus.
+Cerchiamo ora di avvicinarci alla simulazione del campionato di Serie A.
+Il primo step è simulare l'esito di una partita tra due squadre, partendo da quanto ottenuto fino ad ora.
+Prendiamo la Juventus e il Napoli, rispettivamente, prima e seconda classificata del passato campionato italiano di Serie A.
+Supponiamo che, per semplicità, i possibili risultati varino in un intervello che va dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
+Allora quello che avremo è una matrice di probabilità, che sembra una cosa complicata ma in realtà è molto semplice: 
+lunghe le righe abbiamo la probabilità che il Napoli possa segnare quel numero di gol entro la fine della partita, mentre, viceversa, sulle colonne abbiamo le probabilità che la Juventus possa segnare quel goal.
+Facendo la simulazione abbiamo:
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Napoli\Juventus</th>
+<th title="Field #2">0</th>
+<th title="Field #3">1</th>
+<th title="Field #3">2</th>
+<th title="Field #3">3</th>
+</tr></thead>
+<tbody><tr>
+<td >0</td>
+<td>0.10069245 </td>
+<td >0.089384</td>
+<td >0.03967278</td>
+<td >0.01173909</td>
+</tr>
+<tr>
+<td >1</td>
+<td >0.1417741 </td>
+<td >0.12585189</td>
+<td >0.05585893</td>
+<td >0.01652853</td>
+</tr>
+<tr>
+<td >2</td>
+<td >0.09980834</td>
+<td >0.08859918</td>
+<td >0.03932444</td>
+<td >0.01163601</td>
+</tr>
+<tr>
+<td >3</td>
+<td >0.04684309</td>
+<td >0.04158229</td>
+<td >0.01845616</td>
+<td >0.00546114</td>
+</tr>
+</tbody></table>
 
 
