@@ -277,8 +277,39 @@ Nella seconda, invece, abbiamo diverse colonne che rappresentano:
 - l'intervallo di confidenza
 Di tutti questi valori quello che sicuramente ci interessa maggiormente è il P-value, poiché ci permette di capire quale variabile influisce maggiormente: infatti se fissiamo il livello di signicatifità 
 del p-value al 5%, allora possiamo notare che sicuramente una variabile importante potrebbe essere la media gol della Juventus in casa (pari al 2%) o, anche, quello della Sampdoria fuori casa (pari al 3.6%).
-I valori predenti nella colonna <b>Coef</b> rappresentano i valori all'edella funzione esponenziale $$e^x$$
-
+I valori predenti nella colonna <b>Coef</b> rappresentano i valori della funzione logaritmo (per un maggiore dettaglio vedere [qui](http://www.dima.unige.it/~rogantin/ModStat/Epidemiologia/teoria.pdf)).
+Quelli indicati con Team[Squadra] indicano, quando positivi, una maggiore predisposizione al gol, mentre, quando più vicini al valore 0, a nessun effetto. Viceversa i valori indicati con Opponent[squadra]
+indicano quelle squadre con una maggiore capacità di resistere al gol. Alla fine della colonna troviamo il valore <i>home</i> il quale indica la maggiore disposizione delle squadre che giocano in casa a segnare maggiormente rispetto a quelle in trasferta.
+Passiamo a un caso pratico, che tutte queste parole confondono.
+METTICI LA GIF
+Prendiamo come esempio la Juventus: essa presenta come valore team 0.3966, mentre come valore opponent -0.4564. Possiamo fare un confronto con la Lazio la quale presenta una capacità di fare goal maggiore rispetto alla Vecchia Signora (infatti presenta un valore home di 0.4578),
+ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). Infine possiamo notare che le squadre con una migliore difesa sono quelle che risultano essere entrate in Champion's League l'anno scorso (quindi è vero che"In Serie A vince chi non subisce goal"!)
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Squadre</th>
+<th title="Field #2">Casa</th>
+<th title="Field #3">Trasferta</th>
+</tr></thead>
+<tbody><tr>
+<td >1</td>
+<td>Juventus</td>
+<td >-0.4564</td>
+</tr>
+<tr>
+<td >2</td>
+<td>Napoli</td>
+<td >-0.2762</td>
+</tr>
+<tr>
+<td >3</td>
+<td>Roma</td>
+<td >-0.3279</td>
+</tr>
+<tr>
+<td >4</td>
+<td>Inter</td>
+<td >-0.2536</td>
+</tr>
+</tbody></table>
 Supponiamo di voler simulare l'esito di una partita tra due squadre come, ad esempio, la Juventus e il Napoli, rispettivamente, prima e seconda classificata del campionato italiano di Serie A.
 Consideriamo inoltre che, per semplicità, i possibili risultati siano dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
 Allora quello che avremo è una matrice di probabilità, che sembra una cosa complicata ma in realtà è molto semplice: lunghe le righe abbiamo i risultati del Napoli, mentre sulle colonne quelle della Juventus.
