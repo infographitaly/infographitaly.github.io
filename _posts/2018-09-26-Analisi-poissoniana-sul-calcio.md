@@ -316,6 +316,7 @@ Prendiamo la Juventus e il Napoli, rispettivamente, prima e seconda classificata
 Supponiamo che, per semplicità, i possibili risultati varino in un intervello che va dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
 Allora quello che avremo è una matrice di probabilità, che sembra una cosa complicata ma in realtà è molto semplice: 
 lunghe le righe abbiamo la probabilità che il Napoli possa segnare quel numero di gol entro la fine della partita, mentre, viceversa, sulle colonne abbiamo le probabilità che la Juventus possa segnare quel goal.
+Quindi incrociando riga con colonna abbiamo la probabilità che una partita finisca con un certo risultato.
 Facendo la simulazione abbiamo:
 <table class="table table-bordered table-hover table-condensed">
 
@@ -330,32 +331,62 @@ Facendo la simulazione abbiamo:
 
 <tr>
 <td >0</td>
-<td>0.10069245 </td>
-<td >0.089384</td>
-<td >0.03967278</td>
-<td >0.01173909</td>
+<td >0.10652766</td>
+<td >0.12585058</td>
+<td >0.07433923</td>
+<td >0.02927451</td>
 </tr>
 <tr>
 <td >1</td>
-<td >0.1417741 </td>
-<td >0.12585189</td>
-<td >0.05585893</td>
-<td >0.01652853</td>
+<td >0.11270221</td>
+<td >0.13314511</td>
+<td >0.07864807</td>
+<td >0.03097131</td>
 </tr>
 <tr>
 <td >2</td>
-<td >0.09980834</td>
-<td >0.08859918</td>
-<td >0.03932444</td>
-<td >0.01163601</td>
+<td >0.05961732</td>
+<td >0.07043123</td>
+<td >0.04160333</td>
+<td >0.01638323</td>
 </tr>
 <tr>
 <td >3</td>
-<td >0.04684309</td>
-<td >0.04158229</td>
-<td >0.01845616</td>
-<td >0.00546114</td>
+<td >0.02102428</td>
+<td >0.02483785</td>
+<td >0.01467158</td>
+<td >0.00577761</td>
 </tr>
 </tbody></table>
 
+Analizzando i valori, abbiamo che il risultato più probabile per Napoli Juventus è l'1 a 1 e andando a vedere il risultato della partita reale, questo è proprio il pareggio con un gol per parte!
+Quindi il modello sulla singola partita sembra essere coerente!
+Aggiungi link/qualcosa
+Sommando i risultati lungo la diagonale abbiamo la probabilità totale che il risultato finale sia un pareggio, mentre sommando la parte superiore (o inferiore) della matrice abbiamo la probabilità che la squadra fuori casa (in casa)
+vinca. In questo caso la probabilità che la partita finisca in pareggio è 0.28705, mentre che vinca la Juventus è 0.35547 o il Napoli è 0.30328. In sostanza quindi è più probabile che la vecchia signora vinca la partita.
 
+Finalmente arriviamo alla parte finale del nostro viaggio....vediamo se riusciamo a predire la vincitrice del campionato!
+L'idea è quella di far scontrare tutte le squadre in maniera casuale e simulare gli incontri con il modello ottenuto. 
+```
+dict_classifica = dict()
+for squadra in Partite_1718['HomeTeam'].unique():
+    dict_classifica[squadra] = 0
+print(dict_classifica)
+for squadra_home,squadra_away in zip(Partite_1718['HomeTeam'],Partite_1718['AwayTeam']):
+
+    simulation = simulate_match(poisson_model, squadra_home,squadra_away, max_goals=15)
+    prob_home = np.sum(np.tril(simulation, -1))
+    prob_par = np.sum(np.diag(simulation))
+    prob_away = np.sum(np.triu(simulation, 1))
+    result = a.index(max([prob_home,prob_par,prob_away]))
+
+    if result == 0:
+        dict_classifica[squadra_home] = dict_classifica[squadra_home]+3
+    if result == 1:
+        dict_classifica[squadra_home] = dict_classifica[squadra_home]+1
+        dict_classifica[squadra_away] = dict_classifica[squadra_away]+1
+    if result == 2:
+        dict_classifica[squadra_away] = dict_classifica[squadra_away]+3
+```
+La classifica finale è
+{% include /Articolo1/classifica_teorica.html %}
