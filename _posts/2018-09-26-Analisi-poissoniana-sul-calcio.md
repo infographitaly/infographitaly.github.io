@@ -390,3 +390,5 @@ for squadra_home,squadra_away in zip(Partite_1718['HomeTeam'],Partite_1718['Away
 ```
 La classifica finale è
 {% include /Articolo1/classifica_teorica.html %}
+
+
