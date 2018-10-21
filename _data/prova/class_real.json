@@ -1,0 +1,102 @@
+[
+  {
+    "Position": 1,
+    "Team": "Juventus",
+    "Pts": 95
+  },
+  {
+    "Position": 2,
+    "Team": "Napoli",
+    "Pts": 91
+  },
+  {
+    "Position": 3,
+    "Team": "Roma",
+    "Pts": 77
+  },
+  {
+    "Position": 4,
+    "Team": "Lazio",
+    "Pts": 72
+  },
+  {
+    "Position": 5,
+    "Team": "Inter",
+    "Pts": 72
+  },
+  {
+    "Position": 6,
+    "Team": "Milan",
+    "Pts": 64
+  },
+  {
+    "Position": 7,
+    "Team": "Atalanta",
+    "Pts": 60
+  },
+  {
+    "Position": 8,
+    "Team": "Fiorentina",
+    "Pts": 57
+  },
+  {
+    "Position": 9,
+    "Team": "Torino",
+    "Pts": 54
+  },
+  {
+    "Position": 10,
+    "Team": "Sampdoria",
+    "Pts": 54
+  },
+  {
+    "Position": 11,
+    "Team": "Sassuolo",
+    "Pts": 43
+  },
+  {
+    "Position": 12,
+    "Team": "Genoa",
+    "Pts": 41
+  },
+  {
+    "Position": 13,
+    "Team": "Udinese",
+    "Pts": 40
+  },
+  {
+    "Position": 14,
+    "Team": "Chievo",
+    "Pts": 40
+  },
+  {
+    "Position": 15,
+    "Team": "Bologna",
+    "Pts": 39
+  },
+  {
+    "Position": 16,
+    "Team": "Cagliari",
+    "Pts": 39
+  },
+  {
+    "Position": 17,
+    "Team": "Spal",
+    "Pts": 38
+  },
+  {
+    "Position": 18,
+    "Team": "Crotone",
+    "Pts": 35
+  },
+  {
+    "Position": 19,
+    "Team": "Verona",
+    "Pts": 25
+  },
+  {
+    "Position": 20,
+    "Team": "Benevento",
+    "Pts": 21
+  }
+]
