@@ -1,0 +1,142 @@
+[
+  {
+    "Position": 1,
+    "Team_real": "Juventus",
+    "Pts_real": 95,
+    "Team_th": "Juventus",
+    "Pts_th": 114
+  },
+  {
+    "Position": 2,
+    "Team_real": "Napoli",
+    "Pts_real": 91,
+    "Team_th": "Napoli",
+    "Pts_th": 108
+  },
+  {
+    "Position": 3,
+    "Team_real": "Roma",
+    "Pts_real": 77,
+    "Team_th": "Inter",
+    "Pts_th": 99
+  },
+  {
+    "Position": 4,
+    "Team_real": "Lazio",
+    "Pts_real": 72,
+    "Team_th": "Roma",
+    "Pts_th": 99
+  },
+  {
+    "Position": 5,
+    "Team_real": "Inter",
+    "Pts_real": 72,
+    "Team_th": "Lazio",
+    "Pts_th": 90
+  },
+  {
+    "Position": 6,
+    "Team_real": "Milan",
+    "Pts_real": 64,
+    "Team_th": "Atalanta",
+    "Pts_th": 81
+  },
+  {
+    "Position": 7,
+    "Team_real": "Atalanta",
+    "Pts_real": 60,
+    "Team_th": "Milan",
+    "Pts_th": 75
+  },
+  {
+    "Position": 8,
+    "Team_real": "Fiorentina",
+    "Pts_real": 57,
+    "Team_th": "Fiorentina",
+    "Pts_th": 72
+  },
+  {
+    "Position": 9,
+    "Team_real": "Torino",
+    "Pts_real": 54,
+    "Team_th": "Torino",
+    "Pts_th": 72
+  },
+  {
+    "Position": 10,
+    "Team_real": "Sampdoria",
+    "Pts_real": 54,
+    "Team_th": "Sampdoria",
+    "Pts_th": 60
+  },
+  {
+    "Position": 11,
+    "Team_real": "Sassuolo",
+    "Pts_real": 43,
+    "Team_th": "Bologna",
+    "Pts_th": 45
+  },
+  {
+    "Position": 12,
+    "Team_real": "Genoa",
+    "Pts_real": 41,
+    "Team_th": "Udinese",
+    "Pts_th": 45
+  },
+  {
+    "Position": 13,
+    "Team_real": "Udinese",
+    "Pts_real": 40,
+    "Team_th": "Genoa",
+    "Pts_th": 45
+  },
+  {
+    "Position": 14,
+    "Team_real": "Chievo",
+    "Pts_real": 40,
+    "Team_th": "Spal",
+    "Pts_th": 39
+  },
+  {
+    "Position": 15,
+    "Team_real": "Bologna",
+    "Pts_real": 39,
+    "Team_th": "Crotone",
+    "Pts_th": 27
+  },
+  {
+    "Position": 16,
+    "Team_real": "Cagliari",
+    "Pts_real": 39,
+    "Team_th": "Chievo",
+    "Pts_th": 27
+  },
+  {
+    "Position": 17,
+    "Team_real": "Spal",
+    "Pts_real": 38,
+    "Team_th": "Cagliari",
+    "Pts_th": 21
+  },
+  {
+    "Position": 18,
+    "Team_real": "Crotone",
+    "Pts_real": 35,
+    "Team_th": "Sassuolo",
+    "Pts_th": 15
+  },
+  {
+    "Position": 19,
+    "Team_real": "Verona",
+    "Pts_real": 25,
+    "Team_th": "Verona",
+    "Pts_th": 3
+  },
+  {
+    "Position": 20,
+    "Team_real": "Benevento",
+    "Pts_real": 21,
+    "Team_th": "Benevento",
+    "Pts_th": 3
+  }
+]
