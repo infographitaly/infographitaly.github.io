@@ -19,10 +19,10 @@ body {
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 		<script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
-
+		<div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
-			AmCharts.makeChart("chartdiv",
+			AmCharts.makeChart("chartdiv1",
 				{	"dataLoader": {"url": "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/class_real_th.json"},
 					"type": "serial",
 					"categoryField": "Position",
@@ -93,6 +93,6 @@ body {
 		</script>
 	</head>
 	<body>
-		<div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+
 	</body>
 </html>
