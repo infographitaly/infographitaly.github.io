@@ -108,25 +108,25 @@ var chart1 = AmCharts.makeChart("chartdiv1", {
 function setType(data) {
   switch (data) {
     case 'chartData_home':
-		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
-		chart.dataLoader.loadData()
-		console.log(chart.dataLoader);
-		chart.validateNow();
+		chart1.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
+		chart1.dataLoader.loadData()
+		console.log(chart1.dataLoader);
+		chart1.validateNow();
 		break;
 
     case 'chartData_away':
-		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
-		chart.dataLoader.loadData()
-		console.log(chart.dataLoader);
-		chart.validateNow();
+		chart1.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
+		chart1.dataLoader.loadData()
+		console.log(chart1.dataLoader);
+		chart1.validateNow();
 		break;
 
   }
 
 
   document.getElementById('chartdiv1').style.display = 'block';
-  chart.invalidateSize();
-  chart.animateAgain();
+  chart1.invalidateSize();
+  chart1.animateAgain();
 }
 						
 		
