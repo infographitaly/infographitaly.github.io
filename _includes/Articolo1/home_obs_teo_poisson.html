@@ -50,6 +50,7 @@ display: flex;
 var chart1 = AmCharts.makeChart("chartdiv1", {
 	"type": "serial",
 	"dataLoader": {"url": "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json"},
+	console.log("sono qui1"),
 	"balloon": {
 				"adjustBorderColor": false,
 				"horizontalPadding": 10,
@@ -78,6 +79,7 @@ var chart1 = AmCharts.makeChart("chartdiv1", {
 		"valueField": "Osservati",
 		"bullet": "round"}
 			],
+	console.log("sono qui2"),
 	"valueAxes": [
 		{
 			"id": "ValueAxis-1",
@@ -86,6 +88,7 @@ var chart1 = AmCharts.makeChart("chartdiv1", {
 			"titleRotation": 270
 		}],
 	"categoryAxis": {"title": "Numero Gol"},
+	console.log("sono qui3"),
 	"legend":[
 		{                       
 		"useGraphSettings": false,
@@ -99,7 +102,8 @@ var chart1 = AmCharts.makeChart("chartdiv1", {
 		}],
 	"startDuration": 1,
 	"gridAboveGraphs": true,
-	"categoryField": "Categoria"
+	"categoryField": "Categoria",
+	console.log("sono qui4")
 });
 
 
