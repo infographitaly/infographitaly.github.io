@@ -41,12 +41,9 @@ display: flex;
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
 
-// set chart data
 
 
 
-var chartData_home = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
-var chartData_away = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
 
 
 // create serial chart
@@ -120,7 +117,7 @@ function setType(data) {
     case 'chartData_away':
 		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
 		chart.dataLoader.loadData()
-		console.log("away");
+		console.log(chart.dataLoader);
 		chart.validateNow();
 		break;
 
