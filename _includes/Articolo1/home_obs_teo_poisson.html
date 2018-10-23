@@ -110,13 +110,13 @@ function setType(data) {
     case 'chartData_home':
 		chart1.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
 		chart1.dataLoader.loadData()
-		console.log(chart1.dataLoader);
+		console.log(chart1.dataLoader.url);
 		chart1.validateNow();
 
     case 'chartData_away':
 		chart1.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
 		chart1.dataLoader.loadData()
-		console.log(chart1.dataLoader);
+		console.log(chart1.dataLoader.url);
 		chart1.validateNow();
 		
 
