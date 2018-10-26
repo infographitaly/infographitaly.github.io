@@ -391,8 +391,11 @@ for squadra_home,squadra_away in zip(Partite_1718['HomeTeam'],Partite_1718['Away
 La classifica finale è
 {% include /Articolo1/classifica_teorica.html %}
 
-Arrivati a questo punto facciamo un confronto tra la classifica <i>reale</i> e quella <i>teorica</i>: notiamo che le squadre dal primo al sesto posto risultano avere la stessa posizione ma un numero diverso di punti.
-Addirittura per la Juventus si ha la vittoria in tutti i match (quindi per un totale di 114 punti!) Il motivo di questa differenza è data dal fatto che non stati presi in cosniderazione diversi fattori, come gli infortuni, la stanchezza o eventuali elementi psicologici.
-Di fatto si è ipotizzato che ogni squadra schierasse la formazione titolare, giocasse solo il campionato nazionale e ogni giocatore fosse sempre in forma.
-Graficamente abbiamo:
+Arrivati a questo punto facciamo un confronto tra la classifica <i>reale</i> e quella <i>teorica</i>: notiamo che le squadre dal primo al sesto posto risultano avere la stessa posizione ma un numero diversi di punti.
+Addirittura per la Juventus si ha la vittoriaa in tutti i match (quindi per un totale di 114 punti!)Il motivo di questa differenza è data dal fatto che non sono stati presi in considerazione diversi fattori, come gli infortuni, la stanchezza
+o eventuali psicologici.
+Di fatto si è ipotizzato che ogni squadra schierasse la formazione titolare, giocasse solo il campionato nazionale  e ogni giocatore fosse sempre in forma.
+Procedendo verso la parte dell'Europa League notiamo una leggera imprecisione nella predizione. Qualche squadra risulta essere qualche posto sotto o sopra rispetto a quello reale. La squadra con maggiore differenza in termini di classifica è il Sassuolo,
+il quale secondo il modello sarebbe fovuto retrocedere, mentre nella realtà è arrivato sesto. Sempre perché a noi i piacciono i grafici, ecco qua rappresentazione di quanto detto:
+
 {% include /Articolo1/graf_bubble.html %}
