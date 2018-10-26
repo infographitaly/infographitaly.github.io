@@ -302,6 +302,20 @@
         type: 'bar',
         data: chartData,
         options: {
+		  scales: {
+    yAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: 'Posizione Teorica'
+      }
+    }],
+	xAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: 'Posizione Reale'
+      }
+    }]
+  },
           responsive: true,
           title: {
             display: true,
