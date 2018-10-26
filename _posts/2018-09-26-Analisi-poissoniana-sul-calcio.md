@@ -395,4 +395,4 @@ Arrivati a questo punto facciamo un confronto tra la classifica <i>reale</i> e q
 Addirittura per la Juventus si ha la vittoria in tutti i match (quindi per un totale di 114 punti!) Il motivo di questa differenza è data dal fatto che non stati presi in cosniderazione diversi fattori, come gli infortuni, la stanchezza o eventuali elementi psicologici.
 Di fatto si è ipotizzato che ogni squadra schierasse la formazione titolare, giocasse solo il campionato nazionale e ogni giocatore fosse sempre in forma.
 Graficamente abbiamo:
-{% include /Articolo1/graf_classifica.html %}
+{% include /Articolo1/graf_bubble.html %}
