@@ -16,7 +16,8 @@ tags:
   - soccer
   - python
   - scrapy
-  - d3
+  - Amchart
+  - Chart.js
 mathjax: true
 author: "V A"
 date: "26 Settembre 2018"
@@ -369,16 +370,14 @@ Finalmente arriviamo alla parte finale del nostro viaggio....vediamo se riusciam
 L'idea è quella di far scontrare tutte le squadre in maniera casuale e simulare gli incontri con il modello ottenuto. 
 ```
 dict_classifica = dict()
-for squadra in Partite_1718['HomeTeam'].unique():
-    dict_classifica[squadra] = 0
-print(dict_classifica)
-for squadra_home,squadra_away in zip(Partite_1718['HomeTeam'],Partite_1718['AwayTeam']):
-
-    simulation = simulate_match(poisson_model, squadra_home,squadra_away, max_goals=15)
-    prob_home = np.sum(np.tril(simulation, -1))
-    prob_par = np.sum(np.diag(simulation))
-    prob_away = np.sum(np.triu(simulation, 1))
-    result = a.index(max([prob_home,prob_par,prob_away]))
+for squadra in Partite_1718['HomeTeam'].unique(): #Creiamo il dizionario dove le squadre sono le chiavi
+    dict_classifica[squadra] = 0				  
+for squadra_home,squadra_away in zip(Partite_1718['HomeTeam'],Partite_1718['AwayTeam']): 
+    simulation = simulate_match(poisson_model, squadra_home,squadra_away, max_goals=15)  #Effettuiamo la simulazione tramite il modello costruito
+    prob_home = np.sum(np.tril(simulation, -1))											 #e calcoliamo la probabilità che la squadra che gioca in casa vinca sommando gli elementi del triangolo superiore,
+    prob_par = np.sum(np.diag(simulation))												 #la probabilità del pareggio sommando gli elementi sulla diagonale e, infine,
+    prob_away = np.sum(np.triu(simulation, 1))											 #la probabilità che la squadra che gioca fuori casa vinca sommando gli elementi del triangolo inferiore.
+    result = a.index(max([prob_home,prob_par,prob_away]))								 #Riassumo i risultati e a seconda del risultato, diamo il punteggio per la costruzione della classifica.
 
     if result == 0:
         dict_classifica[squadra_home] = dict_classifica[squadra_home]+3
@@ -399,3 +398,12 @@ Procedendo verso la parte dell'Europa League notiamo una leggera imprecisione ne
 il quale secondo il modello sarebbe fovuto retrocedere, mentre nella realtà è arrivato sesto. Sempre perché a noi i piacciono i grafici, ecco qua rappresentazione di quanto detto:
 
 {% include /Articolo1/graf_bubble.html %}
+Come di vede abbiamo dei pallini in una retta, i quali rappresentano le posizioni ideali nella classifica, e quelli colorati, che rappresentano i valori incrociati della posizione di classifica reale e calcolata delle diverse squadre. 
+Se il pallino colorato si trova sopra la retta significa che la squadra è stata sottostimata dal punto di vista teorico e, viceversa, nel caso opposto. Ad esempio il Sassuolo graficamente è la squadra più distante dalla retta dato che l'anno scorso è arrivato
+undicesimo, mentre dal punto di vista teorico è stato ipotizzato diciottesimo. Conludiamo la descrizione del grafico dicendo che i pallini colorati differenziano anche nella grandezza: più il pallino è piccolo più la differenza di punti tra la classifica reale e teorica è minore
+mentre più è grande il raggio, maggiore è la distanza. Poiché abbiamo anche dei valori negativi, allora abbiamo riparametrizzato i valori tra 1, il quale rappresenta il cerchio con raggio minore (vedi Sassuolo), e 10, il quale, invece, rappresenta il cerchio con raggio maggiore (vedi Inter).
+## Conclusione
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non fermentum mauris, sit amet tempus mi. Etiam sit amet lacus faucibus, malesuada arcu id, semper metus. Pellentesque molestie luctus accumsan. Etiam suscipit eu dui nec cursus. In justo quam, ullamcorper non faucibus quis, auctor eget lectus. Vivamus ac est iaculis, pellentesque felis a, ullamcorper elit. Donec vel nibh nisl. Morbi commodo leo non ipsum posuere, id imperdiet arcu tristique.
+
+Donec et luctus sem. Nullam pellentesque ipsum vitae tincidunt faucibus. Maecenas tempor, dui et ullamcorper ullamcorper, purus urna porttitor leo, sed bibendum risus diam eget felis. Donec ipsum purus, iaculis nec sodales vel, cursus sed justo. In id turpis rutrum, tincidunt ipsum nec, vulputate dolor. Maecenas interdum, sapien et aliquam suscipit, sem nunc sollicitudin elit, et porta elit leo ac lectus. Morbi vel fermentum lorem.
+
