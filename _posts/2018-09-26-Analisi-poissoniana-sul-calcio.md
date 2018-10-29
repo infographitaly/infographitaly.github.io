@@ -248,11 +248,16 @@ Questo ci dice che, per esempio, nel caso dei gol in casa i valori di $$\chi$$ q
 
 ## Andiamo avanti...
 Procediamo e cerchiamo di costruire il modello. Quello che abbiamo è che che la distribuzione delle frequenze dei gol segue una distribuzione di Poisson.
- Ma come ci può aiutare a predirre la futura vincitrice della serie A?
+
+Ma come ci può aiutare a predirre la futura vincitrice della serie A?
+
 Possiamo calcolare la probabilità di vittoria di una squadra rispetto ad un'altra, costruendo un modello generalizzato di regressione lineare Poissoniano. 
-Fermiamoci un attimo e respiriamo
+
+Fermiamoci un attimo e respiriamo.
+
 Il modello di regressione lineare è un modo generale per cercare di trovare funzione che rappresenti tutti punti in un grafico. Se i punti non sono distribuiti normalmente (cioè non seguono una distribuzione di Gauss),
 allora dobbiamo ricorrere al modello <b>generalizzato</b> di regressione lineare e poiché nel nostro caso i punti seguono una distribuzione di Poisson, allora ecco che useremo il glm Poissoniano!
+
 Lo script python che farà ciò è:
 ```
 import statsmodels.api as sm
@@ -271,20 +276,26 @@ Per ottenere
 
 {% include /Articolo1/Tabella_modello_1.html %}
 {% include /Articolo1/Tabella_modello_2.html %}
+
 Dalla prima tabella possiamo estrarre qualche informazione, come ad esempio sappiamo che la variabile dipendente sono i gol, che il numero di dati disponibili sono 760 e che la funzione usata, ovvero la fuzione link, è il logaritmo.
+
 Nella seconda, invece, abbiamo diverse colonne che rappresentano:
+
 - il coefficiente e l'errore associato
 - il valore z, pari al rapporto tra il coefficiente e l'errore associato, e il relativo P-Value
 - l'intervallo di confidenza
-Di tutti questi valori quello che sicuramente ci interessa maggiormente è il P-value, poiché ci permette di capire quale variabile influisce maggiormente: infatti se fissiamo il livello di signicatifità 
-del p-value al 5%, allora possiamo notare che sicuramente una variabile importante potrebbe essere la media gol della Juventus in casa (pari al 2%) o, anche, quello della Sampdoria fuori casa (pari al 3.6%).
+
+Di tutti questi valori quello che sicuramente ci interessa maggiormente è il P-value, poiché ci permette di capire quale variabile influisce maggiormente: infatti se fissiamo il livello di signicatifità del p-value al 5%, allora possiamo notare che sicuramente una variabile importante potrebbe essere la media gol della Juventus in casa (pari al 2%) o, anche, quello della Sampdoria fuori casa (pari al 3.6%).
 I valori predenti nella colonna <b>Coef</b> rappresentano i valori della funzione logaritmo (per un maggiore dettaglio vedere [qui](http://www.dima.unige.it/~rogantin/ModStat/Epidemiologia/teoria.pdf)).
-Quelli indicati con Team[Squadra] indicano, quando positivi, una maggiore predisposizione al gol, mentre, quando più vicini al valore 0, a nessun effetto. Viceversa i valori indicati con Opponent[squadra]
-indicano quelle squadre con una maggiore capacità di resistere al gol. Alla fine della colonna troviamo il valore <i>home</i> il quale indica la maggiore disposizione delle squadre che giocano in casa a segnare maggiormente rispetto a quelle in trasferta.
+
+Quelli indicati con Team[Squadra] indicano, quando positivi, una maggiore predisposizione al gol, mentre, quando più vicini al valore 0, a nessun effetto. Viceversa i valori indicati con Opponent[squadra] indicano quelle squadre con una maggiore capacità di resistere al gol. Alla fine della colonna troviamo il valore <i>home</i> il quale indica la maggiore disposizione delle squadre che giocano in casa a segnare maggiormente rispetto a quelle in trasferta.
+
 Passiamo a un caso pratico, che tutte queste parole confondono.
-METTICI LA GIF
-Prendiamo come esempio la Juventus: essa presenta come valore team 0.3966, mentre come valore opponent -0.4564. Possiamo fare un confronto con la Lazio la quale presenta una capacità di fare goal maggiore rispetto alla Vecchia Signora (infatti presenta un valore home di 0.4578),
-ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). Infine possiamo notare che le squadre con una migliore difesa sono quelle che risultano essere entrate in Champion's League l'anno scorso (quindi è vero che"In Serie A vince chi non subisce goal"!)
+
+<div class="tenor-gif-embed center" data-postid="5381579" data-share-method="host" data-width="50%" data-aspect-ratio="1.375"><a href="https://tenor.com/view/doc-brown-back-to-the-future-when-you-remember-when-you-cant-remember-if-christopher-lloyd-gif-5381579">Doc Brown Back To The Future GIF</a> from <a href="https://tenor.com/search/docbrown-gifs">Docbrown GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+Prendiamo come esempio la Juventus: essa presenta come valore team 0.3966, mentre come valore opponent -0.4564. Possiamo fare un confronto con la Lazio la quale presenta una capacità di fare goal maggiore rispetto alla Vecchia Signora (infatti presenta un valore home di 0.4578), ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). Infine possiamo notare che le squadre con una migliore difesa sono quelle che risultano essere entrate in Champion's League l'anno scorso (quindi è vero che"In Serie A vince chi non subisce goal"!)
+
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Squadre</th>
 <th title="Field #2">Casa</th>
@@ -312,12 +323,16 @@ ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). 
 </tr>
 </tbody></table>
 Cerchiamo ora di avvicinarci alla simulazione del campionato di Serie A.
+
 Il primo step è simulare l'esito di una partita tra due squadre, partendo da quanto ottenuto fino ad ora.
 Prendiamo la Juventus e il Napoli, rispettivamente, prima e seconda classificata del passato campionato italiano di Serie A.
 Supponiamo che, per semplicità, i possibili risultati varino in un intervello che va dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
+
 Allora quello che avremo è una matrice di probabilità, che sembra una cosa complicata ma in realtà è molto semplice: 
 lunghe le righe abbiamo la probabilità che il Napoli possa segnare quel numero di gol entro la fine della partita, mentre, viceversa, sulle colonne abbiamo le probabilità che la Juventus possa segnare quel goal.
+
 Quindi incrociando riga con colonna abbiamo la probabilità che una partita finisca con un certo risultato.
+
 Facendo la simulazione abbiamo:
 <table class="table table-bordered table-hover table-condensed">
 
@@ -360,9 +375,18 @@ Facendo la simulazione abbiamo:
 </tr>
 </tbody></table>
 
-Analizzando i valori, abbiamo che il risultato più probabile per Napoli Juventus è l'1 a 1 e andando a vedere il risultato della partita reale, questo è proprio il pareggio con un gol per parte!
+Analizzando i valori, abbiamo che il risultato più probabile per Napoli Juventus è l'1 a 1 e andando a vedere il risultato della partita reale, questo è proprio il pareggio con un gol per parte ([qui](https://www.google.it/search?ei=dQPXW-ntCo2dgQaOoaHIDA&q=napoli+juventus+1+a+1&oq=napoli+juventus+1+a+1&gs_l=psy-ab.3..0i22i30k1l2.7854.9183.0.9345.6.6.0.0.0.0.116.585.5j1.6.0....0...1c.1.64.psy-ab..0.6.582...0j0i67k1.0.W5R_x9VFQpI#sie=m;/g/11ggr8ytzv;2;/m/03zv9;dt;fp;1!) i risultati della partita)!
+
+
+
+
+<div style="align: center; text-align:center;">
+    <figure src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/Cattura.JPG" class="center"> <div class="caption"><small>[Qui]() potete trovare le statistiche della partita</small></div>
+</figure>
+</div>
+
 Quindi il modello sulla singola partita sembra essere coerente!
-Aggiungi link/qualcosa
+
 Sommando i risultati lungo la diagonale abbiamo la probabilità totale che il risultato finale sia un pareggio, mentre sommando la parte superiore (o inferiore) della matrice abbiamo la probabilità che la squadra fuori casa (in casa)
 vinca. In questo caso la probabilità che la partita finisca in pareggio è 0.28705, mentre che vinca la Juventus è 0.35547 o il Napoli è 0.30328. In sostanza quindi è più probabile che la vecchia signora vinca la partita.
 
