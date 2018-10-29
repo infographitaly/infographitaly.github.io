@@ -292,7 +292,7 @@ Quelli indicati con Team[Squadra] indicano, quando positivi, una maggiore predis
 
 Passiamo a un caso pratico, che tutte queste parole confondono.
 
-<div class="tenor-gif-embed" data-postid="5381579" data-share-method="host" data-width="50%" data-aspect-ratio="1.375"><a href="https://tenor.com/view/doc-brown-back-to-the-future-when-you-remember-when-you-cant-remember-if-christopher-lloyd-gif-5381579">Doc Brown Back To The Future GIF</a> from <a href="https://tenor.com/search/docbrown-gifs">Docbrown GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div class="tenor-gif-embed;center" data-postid="5381579" data-share-method="host" data-width="50%" data-aspect-ratio="1.375"><a href="https://tenor.com/view/doc-brown-back-to-the-future-when-you-remember-when-you-cant-remember-if-christopher-lloyd-gif-5381579">Doc Brown Back To The Future GIF</a> from <a href="https://tenor.com/search/docbrown-gifs">Docbrown GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 Prendiamo come esempio la Juventus: essa presenta come valore team 0.3966, mentre come valore opponent -0.4564. Possiamo fare un confronto con la Lazio la quale presenta una capacità di fare goal maggiore rispetto alla Vecchia Signora (infatti presenta un valore home di 0.4578), ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). Infine possiamo notare che le squadre con una migliore difesa sono quelle che risultano essere entrate in Champion's League l'anno scorso (quindi è vero che"In Serie A vince chi non subisce goal"!)
 
@@ -378,7 +378,8 @@ Facendo la simulazione abbiamo:
 Analizzando i valori, abbiamo che il risultato più probabile per Napoli Juventus è l'1 a 1 e andando a vedere il risultato della partita reale, questo è proprio il pareggio con un gol per parte!
 
 <div style="align: center; text-align:center;">
-    <img src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/Cattura.jpg" class="center"> <div class="caption"><small>(Qui)[https://www.google.it/search?ei=dQPXW-ntCo2dgQaOoaHIDA&q=napoli+juventus+1+a+1&oq=napoli+juventus+1+a+1&gs_l=psy-ab.3..0i22i30k1l2.7854.9183.0.9345.6.6.0.0.0.0.116.585.5j1.6.0....0...1c.1.64.psy-ab..0.6.582...0j0i67k1.0.W5R_x9VFQpI#sie=m;/g/11ggr8ytzv;2;/m/03zv9;dt;fp;1!] potete trovare le statistiche della partita</small></div>
+    <figure src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/Cattura.JPG" class="center"> <div class="caption"><small>[Qui](https://www.google.it/search?ei=dQPXW-ntCo2dgQaOoaHIDA&q=napoli+juventus+1+a+1&oq=napoli+juventus+1+a+1&gs_l=psy-ab.3..0i22i30k1l2.7854.9183.0.9345.6.6.0.0.0.0.116.585.5j1.6.0....0...1c.1.64.psy-ab..0.6.582...0j0i67k1.0.W5R_x9VFQpI#sie=m;/g/11ggr8ytzv;2;/m/03zv9;dt;fp;1!) potete trovare le statistiche della partita</small></div>
+</figure>
 </div>
 
 Quindi il modello sulla singola partita sembra essere coerente!
