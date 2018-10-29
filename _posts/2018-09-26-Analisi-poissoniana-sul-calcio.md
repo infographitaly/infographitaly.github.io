@@ -24,10 +24,15 @@ date: "26 Settembre 2018"
 toc: true
 ---
 ## Intro
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non fermentum mauris, sit amet tempus mi. Etiam sit amet lacus faucibus, malesuada arcu id, semper metus. Pellentesque molestie luctus accumsan. Etiam suscipit eu dui nec cursus. In justo quam, ullamcorper non faucibus quis, auctor eget lectus. Vivamus ac est iaculis, pellentesque felis a, ullamcorper elit. Donec vel nibh nisl. Morbi commodo leo non ipsum posuere, id imperdiet arcu tristique.
+Benvenuti al primo articolo di questo blog!
 
-Donec et luctus sem. Nullam pellentesque ipsum vitae tincidunt faucibus. Maecenas tempor, dui et ullamcorper ullamcorper, purus urna porttitor leo, sed bibendum risus diam eget felis. Donec ipsum purus, iaculis nec sodales vel, cursus sed justo. In id turpis rutrum, tincidunt ipsum nec, vulputate dolor. Maecenas interdum, sapien et aliquam suscipit, sem nunc sollicitudin elit, et porta elit leo ac lectus. Morbi vel fermentum lorem.
+Sono un po' agitato per la presentazione di quanto ho scritto ma sono abbastanza fiducioso che la lettura vi intratterrà fino alla fine! Per quanto abbia cercato di ridurre al minimo gli errori leggendo (e rileggendo e rileggendo e rileggendo) quanto scritto, penso che comunque ne troverete a bizzeffe...nel caso fatemi sapere!
 
+Passando alla cose pratiche, parliamo di quanto ho scritto. L'idea è quella vedere se c'è una qualche relazione tra la statistica il mondo del calcio. Partendo da idee piuttosto semplici e da un'analisi sulla media dei gol segnati dalle squadra in caaa e in trasferta, ottenuta tramitei dati del campionato 2017/2018, procederemo con l'introdurre concetti di statistica cercando di renderli il più ssemplice possibile.
+Costruendo, quindi, il modello di regressione e <i>dando in pasto</i> i dati che abbiamo estratto da internet, simuleremo le partite e dal risultato costruirime la classifica. A questo punto saremo in grado di stabilire se il modello è efficace confrontando la posizione delle squadre nella classifica calcolata con quella reale. 
+Le tecnologie usate saranno per il data mining Pandas, Scipy, Statsmodel, mentre per la visualizzazione grafica Amchart e Chart.js. Sebbene anche Python abbia ottime librerie grafiche, l'idea di poter creare grafici interattivi mi ha stimolato a imparare e a rendere più interessanti i dati rappresentati.
+
+A questo punto non posso che augurarvi una buona lettura....si comincia!
 ## Approccio iniziale
 Come primo approccio bisogna trovare i dati su cui poi dobbiamo andare a lavorare. Effettuando una ricerca sul sito della Serie A non ho trovato un database ufficiale, quindi ho dovuto ripiegare su siti esterni. Ve ne sono diversi a disposizione, ma sicuramente quelli con uno storico e una disponibilità maggiore sono [www.football-data.co.uk](http://www.football-data.co.uk/italym.php) e [http://www.footstats.co.uk/](http://www.footstats.co.uk/index.cfm?task=league_full).
 
@@ -419,7 +424,10 @@ Se il pallino colorato si trova sopra la retta significa che la squadra è stata
 undicesimo, mentre dal punto di vista teorico è stato ipotizzato diciottesimo. Conludiamo la descrizione del grafico dicendo che i pallini colorati differenziano anche nella grandezza: più il pallino è piccolo più la differenza di punti tra la classifica reale e teorica è minore
 mentre più è grande il raggio, maggiore è la distanza. Poiché abbiamo anche dei valori negativi, allora abbiamo riparametrizzato i valori tra 1, il quale rappresenta il cerchio con raggio minore (vedi Sassuolo), e 10, il quale, invece, rappresenta il cerchio con raggio maggiore (vedi Inter).
 ## Conclusione
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non fermentum mauris, sit amet tempus mi. Etiam sit amet lacus faucibus, malesuada arcu id, semper metus. Pellentesque molestie luctus accumsan. Etiam suscipit eu dui nec cursus. In justo quam, ullamcorper non faucibus quis, auctor eget lectus. Vivamus ac est iaculis, pellentesque felis a, ullamcorper elit. Donec vel nibh nisl. Morbi commodo leo non ipsum posuere, id imperdiet arcu tristique.
+Da dati del campionato 2017/2018 abbiamo effettuato un'analisi che ci ha permesso di estrarre informazioni statistiche sulle singole squadre. Abbiamo notato che la media dei goal in casa è differente rispetto a quella fuori casa e grazie a dei test statistici, abbiamo accertato con sicurezza che effettivamente è così. La statistica, inoltre, ci ha anche dato una mano a capire se possiamo modellizare con sicurezza la frequenza dei goal nel campionato con una distribuzione di Poisson, 
+così da permettere di creare un modello che ci permettesse di creare un <i>simulatore</i> di partite da cui ricavare la classifica. Il campionato 2017/2018 è stato vinto dalla Juventus, con il Napoli secondo e la Roma terza, e il nostro modello ha predetto esattamente questi risultati (con l'Inter parimerito con la Roma). Naturalmente la predizione per alcune squadre non è sufficientemente buona, ma possiamo più che accontentarci per questo livello (I'm not in academia any more, Baby!).
+Vorrei citare le seguenti fonti, fondamentali per l'estensione di questo primo articolo:
+- https://dashee87.github.io/ :Ottimo, ottimo, ottimo blog sul data science. Ironico e divertente permette di comprendere bene quello che si sta leggendo.
+- https://www1.maths.leeds.ac.uk/~voss/projects/2010-sports/JamesGardner.pdf : articolo da cui ho avuto l'ispirazione per questa idea.
 
-Donec et luctus sem. Nullam pellentesque ipsum vitae tincidunt faucibus. Maecenas tempor, dui et ullamcorper ullamcorper, purus urna porttitor leo, sed bibendum risus diam eget felis. Donec ipsum purus, iaculis nec sodales vel, cursus sed justo. In id turpis rutrum, tincidunt ipsum nec, vulputate dolor. Maecenas interdum, sapien et aliquam suscipit, sem nunc sollicitudin elit, et porta elit leo ac lectus. Morbi vel fermentum lorem.
 
