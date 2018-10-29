@@ -77,8 +77,7 @@ Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotes
 Le due medie sono diverse
 {: .notice--success .text-center}
 
-Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
-
+Quale è vera?
 <div class="dida_right">
   <h4>Info box</h4>
 W. S. Gosset è stato un chimico e matematico agli inizi del 900. Amico di Pearson, lavorò alla Guiness ed è lì che sviluppò il t-test.
@@ -86,6 +85,7 @@ Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della pro
 Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
 fu proibito di 
 </div>
+Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
 Il test di student, noto anche come t-test, aiuta a capire se la differenza tra due medie è significativa o è dovuta al caso. Per fare ciò, va calcolato il valore <i>t</i> e confrontato i valori riportati nelle [tavole](http://stat.unicas.it/vistoccoDownload/stat/materiale/tStudent.pdf).
 Dalla libreria di python <i>scipy</i> usiamo la funzione ttest_ind_from_stats del modulo <i>stats</i>. Calcoliamo i valori medi e le varianze dei gol fuori casa e in casa,
 ```
