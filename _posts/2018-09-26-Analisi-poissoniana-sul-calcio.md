@@ -377,14 +377,6 @@ Facendo la simulazione abbiamo:
 
 Analizzando i valori, abbiamo che il risultato più probabile per Napoli Juventus è l'1 a 1 e andando a vedere il risultato della partita reale, questo è proprio il pareggio con un gol per parte ([qui](https://www.google.it/search?ei=dQPXW-ntCo2dgQaOoaHIDA&q=napoli+juventus+1+a+1&oq=napoli+juventus+1+a+1&gs_l=psy-ab.3..0i22i30k1l2.7854.9183.0.9345.6.6.0.0.0.0.116.585.5j1.6.0....0...1c.1.64.psy-ab..0.6.582...0j0i67k1.0.W5R_x9VFQpI#sie=m;/g/11ggr8ytzv;2;/m/03zv9;dt;fp;1!) i risultati della partita)!
 
-
-
-
-<div style="align: center; text-align:center;">
-    <figure src="/images/2018-09-26-Analisi-poissoniana-sul-calcio/Cattura.JPG" class="center"> <div class="caption"><small>[Qui]() potete trovare le statistiche della partita</small></div>
-</figure>
-</div>
-
 Quindi il modello sulla singola partita sembra essere coerente!
 
 Sommando i risultati lungo la diagonale abbiamo la probabilità totale che il risultato finale sia un pareggio, mentre sommando la parte superiore (o inferiore) della matrice abbiamo la probabilità che la squadra fuori casa (in casa)
