@@ -21,16 +21,19 @@ tags:
 mathjax: true
 author: "V A"
 date: "26 Settembre 2018"
-toc: true
+toc: false
 ---
 ## Intro
 Benvenuti al primo articolo di questo blog!
 
-Sono un po' agitato per la presentazione di quanto ho scritto ma sono abbastanza fiducioso che la lettura vi intratterrà fino alla fine! Per quanto abbia cercato di ridurre al minimo gli errori leggendo (e rileggendo e rileggendo e rileggendo) quanto scritto, penso che comunque ne troverete a bizzeffe...nel caso fatemi sapere!
-
-Passando alla cose pratiche, parliamo di quanto ho scritto. L'idea è quella vedere se c'è una qualche relazione tra la statistica il mondo del calcio. Partendo da idee piuttosto semplici e da un'analisi sulla media dei gol segnati dalle squadra in caaa e in trasferta, ottenuta tramitei dati del campionato 2017/2018, procederemo con l'introdurre concetti di statistica cercando di renderli il più ssemplice possibile.
+L'idea è quella di divulgare informazioni scientifiche tramite argomenti semplici. Come ad esempio (dovrebbe) fare questo articolo! Infatti l'idea è quella vedere se c'è una qualche relazione tra la statistica il mondo del calcio. Partendo da idee piuttosto semplici e da un'analisi sulla media dei gol segnati dalle squadra in caaa e in trasferta, ottenuta tramitei dati del campionato 2017/2018, procederemo con l'introdurre concetti di statistica cercando di renderli il più ssemplice possibile.
 Costruendo, quindi, il modello di regressione e <i>dando in pasto</i> i dati che abbiamo estratto da internet, simuleremo le partite e dal risultato costruirime la classifica. A questo punto saremo in grado di stabilire se il modello è efficace confrontando la posizione delle squadre nella classifica calcolata con quella reale. 
 Le tecnologie usate saranno per il data mining Pandas, Scipy, Statsmodel, mentre per la visualizzazione grafica Amchart e Chart.js. Sebbene anche Python abbia ottime librerie grafiche, l'idea di poter creare grafici interattivi mi ha stimolato a imparare e a rendere più interessanti i dati rappresentati.
+
+Il contenuto del seguente articolo è:
+- :loudspeaker: <b>Approccio iniziale</b>
+- :hammer: Costruzione del modello
+- :end: Conclusione
 
 A questo punto non posso che augurarvi una buona lettura....si comincia!
 ## Approccio iniziale
@@ -250,7 +253,7 @@ Questo ci dice che, per esempio, nel caso dei gol in casa i valori di $$\chi$$ q
 	<div class="caption"><small>Felicità!</small></div>
 </div>
 
-## Andiamo avanti...
+## Costruzione del modello
 Procediamo e cerchiamo di costruire il modello. Quello che abbiamo è che che la distribuzione delle frequenze dei gol segue una distribuzione di Poisson.
 
 Ma come ci può aiutare a predirre la futura vincitrice della serie A?
