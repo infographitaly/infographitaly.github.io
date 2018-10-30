@@ -30,11 +30,6 @@ L'idea è quella di divulgare informazioni scientifiche tramite argomenti sempli
 Costruendo, quindi, il modello di regressione e <i>dando in pasto</i> i dati che abbiamo estratto da internet, simuleremo le partite e dal risultato costruirime la classifica. A questo punto saremo in grado di stabilire se il modello è efficace confrontando la posizione delle squadre nella classifica calcolata con quella reale. 
 Le tecnologie usate saranno per il data mining Pandas, Scipy, Statsmodel, mentre per la visualizzazione grafica Amchart e Chart.js. Sebbene anche Python abbia ottime librerie grafiche, l'idea di poter creare grafici interattivi mi ha stimolato a imparare e a rendere più interessanti i dati rappresentati.
 
-Il contenuto del seguente articolo è:
-- :loudspeaker: <b>Approccio iniziale</b>
-- :hammer: Costruzione del modello
-- :end: Conclusione
-
 A questo punto non posso che augurarvi una buona lettura....si comincia!
 ## Approccio iniziale
 Come primo approccio bisogna trovare i dati su cui poi dobbiamo andare a lavorare. Effettuando una ricerca sul sito della Serie A non ho trovato un database ufficiale, quindi ho dovuto ripiegare su siti esterni. Ve ne sono diversi a disposizione, ma sicuramente quelli con uno storico e una disponibilità maggiore sono [www.football-data.co.uk](http://www.football-data.co.uk/italym.php) e [http://www.footstats.co.uk/](http://www.footstats.co.uk/index.cfm?task=league_full).
