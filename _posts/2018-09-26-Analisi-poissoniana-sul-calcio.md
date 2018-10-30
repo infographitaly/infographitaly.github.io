@@ -30,17 +30,18 @@ L'idea è quella di divulgare informazioni scientifiche tramite argomenti sempli
 Costruendo, quindi, il modello di regressione e <i>dando in pasto</i> i dati che abbiamo estratto da internet, simuleremo le partite e dal risultato costruirime la classifica. A questo punto saremo in grado di stabilire se il modello è efficace confrontando la posizione delle squadre nella classifica calcolata con quella reale. 
 Le tecnologie usate saranno per il data mining Pandas, Scipy, Statsmodel, mentre per la visualizzazione grafica Amchart e Chart.js. Sebbene anche Python abbia ottime librerie grafiche, l'idea di poter creare grafici interattivi mi ha stimolato a imparare e a rendere più interessanti i dati rappresentati.
 
+
 A questo punto non posso che augurarvi una buona lettura....si comincia!
 ## Approccio iniziale
 Come primo approccio bisogna trovare i dati su cui poi dobbiamo andare a lavorare. Effettuando una ricerca sul sito della Serie A non ho trovato un database ufficiale, quindi ho dovuto ripiegare su siti esterni. Ve ne sono diversi a disposizione, ma sicuramente quelli con uno storico e una disponibilità maggiore sono [www.football-data.co.uk](http://www.football-data.co.uk/italym.php) e [http://www.footstats.co.uk/](http://www.footstats.co.uk/index.cfm?task=league_full).
 
-Mentre nel primo sono disponibile le statistiche di tutte le partite giocate per i principali campionati (e leghe minori....), nel secondo sono forniti i valori riassuntivi della classifica (suddivisi per half e full time) e inoltre, per entrambi i siti, è possibile scaricare i file in formato csv.
+Mentre nel primo sono disponibile le statistiche di tutte le partite giocate per i principali campionati (e leghe minori....), nel secondo sono forniti i valori riassuntivi della classifica (suddivisi per half e full time).Da sottolineare che per entrambi i siti, è possibile scaricare i file in formato csv.
 
-Nella tabella successiva sono riportati gli esempi pratici di qualche dato usato durante l'analisi:
+Solo a titolo di esempio, nella tabella successiva sono riportati gli esempi pratici di qualche dato usato durante l'analisi:
 
 {% include /prova/prova.html %}
 
-Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto con python (e in particolare pandas).
+Il primo step da seguire è analizzare i dati presi in considerazione e per fare ciò useremo una libreria specifica di Python, ovvero Pandas.
 
 <div style="align: center; text-align:center;">
     <img src="https://imgs.xkcd.com/comics/python.png"  class="center">
@@ -48,19 +49,19 @@ Il primo step da seguire è l'analisi dei dati, che in questo caso verrà fatto 
 </div>
 
 
-Per prima cosa dobbiamo importare pandas (necessaria per lavorare con i dataframe) e poi usare la funzione <em>open_csv</em> per aprire (indovinate un po?!) i csv. 
-In seguito abbiamo calcolato la media dei gol segnati in casa e fuori casa specificando la colonna e utilizzando <i>.mean()</i>. 
+Iniziamo con l'importare Pandas e aprire il  file csv tramite la funzione apposita <i>open_csv</i>. In seguito calcoleremo la media dei gol segnati in casa e fuori casa specificando la colonna e utilizzando <i>.mean()</i>. 
 ```
-import pandas
-Dati_1718 = pd.read_excel('path\Dati_1718.xlsx')
-Partite_1718 = pd.read_excel('path\Partite_1718.xlsx')
+import pandas #Importiamo Pandas
+Partite_1718 = pd.read_excel('path\Partite_1718.xlsx') #Apriamo i file
 
-mean_home_FT = Partite_1718['FTHG'].mean()
-mean_away_FT = Partite_1718['FTAG'].mean()
+mean_home_FT = Partite_1718['FTHG'].mean()  #Calcoliamo la media
+mean_away_FT = Partite_1718['FTAG'].mean()  #
 
+print("Media Gol in casa \t",mean_home_FT)
+print("Media Gol fuori casa \t",mean_away_FT)
 
-Media Gol in casa    1.45526
-Media Gol fuori casa    1.22105
+Media Gol in casa	1.45526
+Media Gol fuori casa	1.22105
 ```
 AH!
 Possiamo subito notare una caratteristica di questi dati! La media gol in casa è maggiore che fuori casa...ma come sempre dobbiamo affidarci a qualcosa di oggettivo per sapere se ciò è vero!
