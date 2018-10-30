@@ -20,7 +20,7 @@ tags:
   - Chart.js
 mathjax: true
 author: "V A"
-date: "26 Settembre 2018"
+date: "30 Ottobre 2018"
 toc: false
 ---
 ## Intro
