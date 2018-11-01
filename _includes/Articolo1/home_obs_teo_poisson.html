@@ -7,7 +7,7 @@ body {
   font-family: Verdana;
 }
 
-.chartdiv1 {
+.chartdiv {
   width: 100%;
   height: 500px;
   font-size: 13px;
@@ -46,7 +46,7 @@ display: flex;
 
 
 // create serial chart
-var chart1 = AmCharts.makeChart("chartdiv1", {
+var chart = AmCharts.makeChart("chartdiv", {
 	"type": "serial",
 	"dataLoader": {"url": "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json"},
 	"balloon": {
@@ -107,22 +107,22 @@ var chart1 = AmCharts.makeChart("chartdiv1", {
 function setType(data) {
   switch (data) {
     case 'chartData_home':
-		chart1.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
-		chart1.dataLoader.loadData()
-		console.log(chart1.dataLoader);
-		chart1.validateNow();
+		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
+		chart.dataLoader.loadData()
+		console.log(chart.dataLoader);
+		chart.validateNow();
 
     case 'chartData_away':
-		chart1.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
-		chart1.dataLoader.loadData()
-		console.log(chart1.dataLoader);
-		chart1.validateNow();
+		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
+		chart.dataLoader.loadData()
+		console.log(chart.dataLoader);
+		chart.validateNow();
 		
 
   }
 
 
-  document.getElementById('chartdiv1').style.display = 'block';
+  document.getElementById('chartdiv').style.display = 'block';
   chart1.invalidateSize();
   chart1.animateAgain();
 }
