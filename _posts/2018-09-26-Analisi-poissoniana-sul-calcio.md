@@ -54,29 +54,30 @@ Iniziamo con l'importare Pandas e aprire il  file csv tramite la funzione apposi
 import pandas #Importiamo Pandas
 Partite_1718 = pd.read_excel('path\Partite_1718.xlsx') #Apriamo i file
 
-mean_home_FT = Partite_1718['FTHG'].mean()  #Calcoliamo la media
-mean_away_FT = Partite_1718['FTAG'].mean()  #
+mean_home_FT = Partite_1718['FTHG'].mean()	#Calcoliamo la media
+mean_away_FT = Partite_1718['FTAG'].mean()	#
 
-print("Media Gol in casa \t",mean_home_FT)
-print("Media Gol fuori casa \t",mean_away_FT)
+print("Media Gol in casa \t",mean_home_FT)	#Stampiamo i valori
+print("Media Gol fuori casa \t",mean_away_FT)	#
 
 Media Gol in casa	1.45526
 Media Gol fuori casa	1.22105
 ```
-AH!
-Possiamo subito notare una caratteristica di questi dati! La media gol in casa è maggiore che fuori casa...ma come sempre dobbiamo affidarci a qualcosa di oggettivo per sapere se ciò è vero!
-Quindi facciamo un'ipotesi, che possiamo chiamare <i>ipotesi nulla</i>, e diciamo che 
+Possiamo subito notare una caratteristica di questi dati! La media dei goal segnati in casa durante il campionato italiano 2017/2018 è maggiore di quelli fuori casa. Intuitivamente questo può avere senso, in quanto chi gioca in casa ha numerosi vantaggi rispetto alla squadra ospite, come il supporto dei tifosi, il non dover affrontare il viaggio, etc....
+Come possiamo stabilire (più o meno) oggettivamente se questi due valori sono effettivamente differenti? Grazie a dei test statistici! Iniziamo facendo un'ipotesi, che chiameremo <i>ipotesi nulla</i>, tale per cui 
 
 
 La media gol in casa è uguale alla media dei gol segnati fuori casa.
 {: .notice--success .text-center}
-Subito dopo però affermiamo anche la seguente ipotesi, che chiameremo <i>ipotesi alternativa</i>
 
+In contrapposizione a quanto appena detto, ipotizziamo che
 
 Le due medie sono diverse
 {: .notice--success .text-center}
 
-Quale è vera? Per rispondere correttamente dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
+Chiamiamo quest'ultima ipotesi come <i>ipotesi alternativa</i>.
+
+Per stabilire quale delle due è corretta dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
 
 <div class="dida_right">
   <h4>Info box</h4>
