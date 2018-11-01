@@ -64,7 +64,9 @@ Media Gol in casa	1.45526
 Media Gol fuori casa	1.22105
 ```
 Possiamo subito notare una caratteristica di questi dati! La media dei goal segnati in casa durante il campionato italiano 2017/2018 è maggiore di quelli fuori casa. Intuitivamente questo può avere senso, in quanto chi gioca in casa ha numerosi vantaggi rispetto alla squadra ospite, come il supporto dei tifosi, il non dover affrontare il viaggio, etc....
-Come possiamo stabilire (più o meno) oggettivamente se questi due valori sono effettivamente differenti? Grazie a dei test statistici! Iniziamo facendo un'ipotesi, che chiameremo <i>ipotesi nulla</i>, tale per cui 
+
+Come possiamo stabilire (più o meno) oggettivamente se questi due valori sono effettivamente differenti? Grazie a dei test statistici! 
+Iniziamo facendo un'ipotesi, che chiameremo <i>ipotesi nulla</i>, tale per cui 
 
 
 La media gol in casa è uguale alla media dei gol segnati fuori casa.
