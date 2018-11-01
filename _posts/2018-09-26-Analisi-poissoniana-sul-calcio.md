@@ -54,15 +54,31 @@ Iniziamo con l'importare Pandas e aprire il  file csv tramite la funzione apposi
 import pandas #Importiamo Pandas
 Partite_1718 = pd.read_excel('path\Partite_1718.xlsx') #Apriamo i file
 
-mean_home_FT = Partite_1718['FTHG'].mean()	#Calcoliamo la media
-mean_away_FT = Partite_1718['FTAG'].mean()	#
+mean_home = Partite_1718['FTHG'].mean()	#Calcoliamo la media
+mean_away = Partite_1718['FTAG'].mean()	#
 
-print("Media Gol in casa \t",mean_home_FT)	#Stampiamo i valori
-print("Media Gol fuori casa \t",mean_away_FT)	#
+print("Media Gol in casa \t",mean_home)	#Stampiamo i valori
+print("Media Gol fuori casa \t",mean_away)	#
 
-Media Gol in casa	1.45526
-Media Gol fuori casa	1.22105
 ```
+
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Valori</th>
+<th title="Field #2">Casa</th>
+<th title="Field #3">Trasferta</th>
+</tr></thead>
+<tbody><tr>
+<td >Media</td>
+<td>1.45526</td>
+<td >1.22105</td>
+</tr>
+<tr>
+<td >Varianza</td>
+<td>1.720958</td>
+<td >1.41275</td>
+</tr>
+</tbody></table>
+
 Possiamo subito notare una caratteristica di questi dati! La media dei goal segnati in casa durante il campionato italiano 2017/2018 è maggiore di quelli fuori casa. Intuitivamente questo può avere senso, in quanto chi gioca in casa ha numerosi vantaggi rispetto alla squadra ospite, come il supporto dei tifosi, il non dover affrontare il viaggio, etc....
 
 Come possiamo stabilire (più o meno) oggettivamente se questi due valori sono effettivamente differenti? Grazie a dei test statistici! 
@@ -82,48 +98,27 @@ Chiamiamo quest'ultima ipotesi come <i>ipotesi alternativa</i>.
 Per stabilire quale delle due è corretta dobbiamo rivolgerci al signor William Sealy Gosset, noto anche come Student.
 
 <div class="dida_right">
-  <h4>Info box</h4>
+  <h1 align="center">Info box</h1>
 W. S. Gosset è stato un chimico e matematico agli inizi del 900. Amico di Pearson, lavorò alla Guiness ed è lì che sviluppò il t-test.
 Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della produzione della birra, per prevenire la fuga di informazioni la società impedì ai suoi dipendenti la pubblicazione di articoli contenente informazioni sensibili.
 Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
 </div>
-Il test di student, noto anche come t-test, aiuta a capire se la differenza tra due medie è significativa o è dovuta al caso. Per fare ciò, va calcolato il valore <i>t</i> e confrontato i valori riportati nelle [tavole](http://stat.unicas.it/vistoccoDownload/stat/materiale/tStudent.pdf).
-Dalla libreria di python <i>scipy</i> usiamo la funzione ttest_ind_from_stats del modulo <i>stats</i>. Calcoliamo i valori medi e le varianze dei gol fuori casa e in casa,
+Il test di student, noto anche come t-test, aiuta a capire se la differenza tra due medie è significativa o è dovuta al caso. Per fare ciò, va calcolato il valore <i>t</i> e confrontato con i valori riportati nelle [tavole](http://stat.unicas.it/vistoccoDownload/stat/materiale/tStudent.pdf).
+
+Per fare ciò, importiamo <i>scipy</i>  eusiamo la funzione ttest_ind_from_stats del modulo <i>stats</i>. Useremo i valori medi e le variaziane dei goal segnati in casa e fuori casa calcolati precedentemente. Calcoliamo i gradi di libertà ([qui](https://it.wikipedia.org/wiki/Gradi_di_libert%C3%A0_(statistica) una breve speigazione) indicati dalla variabile <i>dof</i> e applichiamo il test.
 ```
 from scipy.stats import ttest_ind_from_stats
-mean_home = Partite_1718['FTHG'].mean() #Calolo dei valori medi
-mean_away = Partite_1718['FTAG'].mean() #
-var_home = Partite_1718['FTHG'].var()   #Calcolo delle varianze
-var_away = Partite_1718['FTAG'].var()   #
-dof = len(Partite_1718['FTHG'])+len(Partite_1718['FTAG'])-2
+
+dof = len(Partite_1718['FTHG'])+len(Partite_1718['FTAG'])-2	#Calcoliamo i gradi di libertà
 t_stud, p_val = ttest_ind_from_stats(mean_home,var_home,dof,mean_away,var_away,dof)
-print("===mean value Home/mean value Away===")
-print(mean_home,"/",mean_away)
+print("===mean value Home/mean value Away===") #Stampiamo i valori
+print(mean_home,"/t", mean_away)
 print("===var value Home/var value Away===")
-print(var_home,"/",var_away)
+print(var_home,"/t", var_away)
 print("===T-Student/P-Value===")
-print(t_stud,"/",p_val)
+print(t_stud,"/t", p_val)
 ```
-I valori ottenuti sono:
-
-<table class="table table-bordered table-hover table-condensed">
-<thead><tr><th title="Field #1">Valori</th>
-<th title="Field #2">Casa</th>
-<th title="Field #3">Trasferta</th>
-</tr></thead>
-<tbody><tr>
-<td >Media</td>
-<td>1.45526</td>
-<td >1.22105</td>
-</tr>
-<tr>
-<td >Varianza</td>
-<td>1.720958</td>
-<td >1.41275</td>
-</tr>
-</tbody></table>
-
-In particolare...
+I valori ottenuti sono quindi:
 
 <table class="table table-bordered table-hover table-condensed">
 <tbody><tr>
@@ -135,40 +130,66 @@ In particolare...
 <td>0.04092</td>
 </tr>
 </tbody></table>
+
 Abbiamo quindi ottenuto un valore di t di 2.04783 e, considerando i nostri gradi di libertà (758), allora possiamo stabilire
 che, dato il valore di p-value di 0.04 esso è minore dei valori di soglia del 95% e del 99% e, quindi possiamo rigettare l'ipotesi nulla e accettare quella alternativa.
-Quello che stiamo sostanzialmente dicendo è che i due valori medi sono "oggettivamente" differenti.
 
-Le motivazione su quesa differenza sono molteplici, come, ad esempio, il supporto dei tifosi (you'll never walk alone!).
+In sostanza quello che stiamo dicendo è che i due valori medi sono <b>differenti</b>.
 
-In principio quindi dovremmo considerare anche questo fattore del giocare in <i>Casa</i>, ma per ora passeremo oltre e (forse) ci torneremo più in la.
+Come detto le motivazione alla base potrebbero essere molteplici e, in principio, dovremmo tenerne conto per sviluppare il nostro modello, ma per ora passeremo oltre e (forse) ci torneremo più in là.
 
-A questo punto possiamo introdurre la distribuzione di Poisson.
+Arrivati a questo punto iniziamo a complicare le cose introducendo la distribuzione di Poisson.
+
 <div style="align: center; text-align:center;">
     <img src="https://imgs.xkcd.com/comics/poisson.jpg"  class="center">
 	<div class="caption"><small>Toh!Un'altra immagine presa da <a href="https://xkcd.com/12/">xkcd</a></small></div>
 	<div class="caption"><small>(Una breve spiegazione della vignetta <a href="http://leganerd.com/2011/04/15/xkcd-poisson/">qui</a>)</small></div>
 </div>
-La distribuzione di poisson viene utilizzata quando si vuole conoscere la probabilità di ottenere un certo numero di successi per unità di tempo, sapendo che <i>mediamente</i> se ne verifica un numero $$\lambda$$:
+
+La distribuzione di poisson viene utilizzata quando si vuole conoscere la probabilità di ottenere un certo numero di successi per unità di tempo, sapendo che <i>mediamente</i> se ne verifichi un numero $$\lambda$$. Questo tradotto in formule diventa:
 
 $$
 P\left( x \right) = \frac{e^{-\lambda} \lambda ^x }{x!}, \lambda>0
 $$
 
-Aspettate, c'è scritto mediamente? Ma allora è proprio quello che fa al caso nostro! Il problema è che ci sono alcune condizioni da rispettare (altrimenti il signor Siméon-Denis "El Tanque" Poisson ce accappotta co na manata):
-- gli eventi devono essere indipendenti -> Questo non ci piace perché significa che se viene segnato un gol al primo minuto la squadra non ne risente e si comporta come se nulla fosse accaduto!
-- la probabilità che in una determinata unità di tempo si verifichi un esito favorevole deve essere la stessa per tutte le unità -> Ci piace? Naturalmente no, in quanto questo significa che la probabilità di segnare un gol al primo tempo è la stessa che al secondo....ma i giocatori risento del calo fisico!
-- il numero medio di successi per unità di tempo deve essere costante -> Finalmente una buona notizia...ah no...questo ci sta dicendo che la media gol si mantiene costante durante la partita (forse con Zeman è così)
-Ma è un distrastro! Non ne va bene una! ... Ma lo è veramente? Potremmo ragionarci su e aggirare il problema considerando un'unità di tempo piuttosto larga e consona a quello che ci interessa a noi. Questa finestra temporale potrebbe essere proprio lunga 90 minuti e assumere così indipendenza! In questo modo avremmo risolto la maggior parte dei problemi! 
- 
+Aspettate, c'è scritto mediamente? Ma allora è proprio quello che fa al caso nostro! Il problema è che ci sono alcune condizioni da rispettare (altrimenti il signor Siméon-Denis Poisson ce accappotta co na manata):
+
+- <i>gli eventi devono essere indipendenti</i>;
+
+- <i>la probabilità che in una determinata unità di tempo si verifichi un esito favorevole deve essere la stessa per tutte le unità</i>;
+
+- <i>il numero medio di successi per unità di tempo deve essere costante</i>;
+
+Queste condizioni ci stanno dicendo che:
+- se considerassimo la partita come un insieme di istanti temporali composti da un minuto, per un totale di 90 minuti, dovremmo considerare che se un goal venisse segnato dalla squadra A in un istante qualunque della partita, la squadra B dovrebbe comportarsi coem se nulla fosse accaduto;
+- la media goal dovrebbe mantenersi costante durante la partita
+<div style="align: center; text-align:center;">
+    <img src="https://i.kym-cdn.com/photos/images/original/000/471/439/321.gif"  class="center">
+</div>
+
+Diciamo che queste restrizioni non ci piacciono per niente! Però possiamo trovare una soluzione ragionandoci su...
+
+Un'idea potrebbe essere quella di considerare una finestra temporale maggiore di un minuto: ad esempio possiamo supporre che tutta la partita sia composta da un'unità di tempo, ovvero che invece di considerare 90 minuti di istanti temporali, ne consideriamo uno da 90 minuti. Naturalmente la scelta di tale quantità minuti ricade nel fatto che le partite di calcio durano almeno novanta minuti (di più se consideriamo il recupero). Ciò ci permette di accettare le condizioni imposte e di poter procedere avanti con l'analisi!
+
 
 <div style="align: center; text-align:center;">
     <img src="http://www.nov-art.eu/img/92MinutiDiApplausi.gif"  class="center">
 	<div class="caption"><small>Qui ci vogliono 92 minuti di applausi! (meglio 90...)</small></div>
 </div>
 
+A questo punto siamo in grado di calcolare i valori della distribuzione di Poisson relativi ai due valori medi: per fare ciò, importiamo da <i>scipy.stats</i> la funzione <i>poisson</i>, quindi confrontiamo i valori teorici con quelli osservati tramite una rappresentazione grafica:
+```
+from scipy.stats import poisson		#importiamo la funzione poisson
 
-Quindi possiamo fare un breve confronto:
+for mean_to_use,state in zip([mean_home,mean_away],["Home","Away"]):
+    df_FT = pd.DataFrame({state: Partite_1718['FTHG'].value_counts()})	#calcoliamo la frequenza dei goal e li rappresentiamo in un df
+    obs = df_FT[state].values	#poniamo in un lista le frequenze osservate
+    sum_tot = np.sum(obs)	#calcoliamo la somma totale dei goal
+    exp = [poisson.pmf(i, mean_to_use)*sum_tot for i in range(0,len(obs))]	#calcoliamo i valori teorici
+
+```
+
+
 {% include /Articolo1/home_obs_teo_poisson.html %}
 
 
