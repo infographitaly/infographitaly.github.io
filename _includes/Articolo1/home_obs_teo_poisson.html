@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 	
@@ -6,19 +5,15 @@
 body {
   font-family: Verdana;
 }
-
 .chartdiv {
   width: 100%;
   height: 500px;
   font-size: 13px;
 }
-
-
 .type-selector {
 font-size: 13px;
 display: inline;
 }
-
 .type-selector label {
 display: flex;
   cursor: pointer;
@@ -28,30 +23,25 @@ display: flex;
 	
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
 <div class="type-selector">
   <label><input type="radio" name="type" value="chartData_home" onclick="setType(this.value);" checked="checked" /> <b>Casa</b></label>
   <label><input type="radio" name="type" value="chartData_away" onclick="setType(this.value);" /> <b>Trasferta</b></label>
 </div>
-
+<div id="chartdiv" class="chartdiv" style="display: block;"></div>
 
 		
 
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
-
-
-
-
-
-
+// set chart data
+var chartData_home = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
+var chartData_away = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
 // create serial chart
 var chart = AmCharts.makeChart("chartdiv", {
 	"type": "serial",
-	"dataLoader": {"url": "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json",
-	"load": function ( options, chart ) {
-        console.log( 'Loaded file: ' + options.url );
-      }},
+	"dataLoader": {"url": "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json"},
 	"balloon": {
 				"adjustBorderColor": false,
 				"horizontalPadding": 10,
@@ -101,30 +91,23 @@ var chart = AmCharts.makeChart("chartdiv", {
 		}],
 	"startDuration": 1,
 	"gridAboveGraphs": true,
-	"categoryField": "Categoria",
+	"categoryField": "Categoria"
 });
-
-
-
-
 function setType(data) {
   switch (data) {
     case 'chartData_home':
 		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_home.json";
-		/*chart.dataLoader.loadData()*/
+		chart.dataLoader.loadData()
 		console.log(chart.dataLoader);
 		chart.validateNow();
-
+		break;
     case 'chartData_away':
 		chart.dataLoader.url = "https://raw.githubusercontent.com/infographitaly/infographitaly.github.io/master/_data/prova/json_away.json";
-		/*chart.dataLoader.loadData()*/
-		console.log(chart.dataLoader);
+		chart.dataLoader.loadData()
+		console.log("away");
 		chart.validateNow();
-		
-
+		break;
   }
-
-
   document.getElementById('chartdiv').style.display = 'block';
   chart.invalidateSize();
   chart.animateAgain();
@@ -133,12 +116,10 @@ function setType(data) {
 		
 		
 		
-
 				
-
 		</script>
 	</head>
 	<body>
-<div id="chartdiv1" class="chartdiv1"></div>
+
 	</body>
 </html>
