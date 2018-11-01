@@ -102,6 +102,8 @@ Per stabilire quale delle due è corretta dobbiamo rivolgerci al signor William 
 W. S. Gosset è stato un chimico e matematico agli inizi del 900. Amico di Pearson, lavorò alla Guiness ed è lì che sviluppò il t-test.
 Poiché prima di lui un dipendente della fabbrica pubblicò il segreto della produzione della birra, per prevenire la fuga di informazioni la società impedì ai suoi dipendenti la pubblicazione di articoli contenente informazioni sensibili.
 Per ovviare a questo problema Gosset pubblicò i suoi articoli con lo pseudonimo di Student. Ecco perché il test prende il nome di test di student!
+	
+	
 </div>
 Il test di student, noto anche come t-test, aiuta a capire se la differenza tra due medie è significativa o è dovuta al caso. Per fare ciò, va calcolato il valore <i>t</i> e confrontato con i valori riportati nelle [tavole](http://stat.unicas.it/vistoccoDownload/stat/materiale/tStudent.pdf).
 
@@ -162,7 +164,8 @@ Aspettate, c'è scritto mediamente? Ma allora è proprio quello che fa al caso n
 
 Queste condizioni ci stanno dicendo che:
 - se considerassimo la partita come un insieme di istanti temporali composti da un minuto, per un totale di 90 minuti, dovremmo considerare che se un goal venisse segnato dalla squadra A in un istante qualunque della partita, la squadra B dovrebbe comportarsi coem se nulla fosse accaduto;
-- la media goal dovrebbe mantenersi costante durante la partita
+- la media goal dovrebbe mantenersi costante durante la partita (questo è valido se l'allenatore è Zeman!)
+
 <div style="align: center; text-align:center;">
     <img src="https://i.kym-cdn.com/photos/images/original/000/471/439/321.gif"  class="center">
 </div>
@@ -178,9 +181,17 @@ Un'idea potrebbe essere quella di considerare una finestra temporale maggiore di
 </div>
 
 A questo punto siamo in grado di calcolare i valori della distribuzione di Poisson relativi ai due valori medi: per fare ciò, importiamo da <i>scipy.stats</i> la funzione <i>poisson</i>, quindi confrontiamo i valori teorici con quelli osservati tramite una rappresentazione grafica:
+
 ```
 from scipy.stats import poisson		#importiamo la funzione poisson
+frequency_home = Partite_1718['FTHG'].value_counts() #calcoliamo la frequenza dei goal e li rappresentiamo in un df
+frequency_away = Partite_1718['FTAG'].value_counts()
+df_home_FT = pd.DataFrame({'Home': frequency_home})
+df_away_FT = pd.DataFrame({'Away':frequency_away})
 
+
+df_FT = df_home_FT.combine_first(df_away_FT).fillna(0)
+df_FT = df_FT[['Home','Away']]
 for mean_to_use,state in zip([mean_home,mean_away],["Home","Away"]):
     df_FT = pd.DataFrame({state: Partite_1718['FTHG'].value_counts()})	#calcoliamo la frequenza dei goal e li rappresentiamo in un df
     obs = df_FT[state].values	#poniamo in un lista le frequenze osservate
@@ -193,54 +204,49 @@ for mean_to_use,state in zip([mean_home,mean_away],["Home","Away"]):
 {% include /Articolo1/home_obs_teo_poisson.html %}
 
 
-Effettivamente l'andamento tra i valori calcolati e quelli misurati sembrano essere simili...ma questo non basta, poiché dobbiamo affidarci ancora una volta ad un test. 
-Iniziamo con l'affermare, quindi, che 
+Effettivamente l'andamento tra i valori calcolati e quelli misurati sembrano essere simili...ma questo non basta, poiché per essere sicuri dobbiamo affidarci ancora una volta ad un test. 
 
-La distribuzione dei goal totali seguono approssimativamente una distribuzione di Poisson.
-{: .notice--success}
+Iniziamo con l'affermare, quindi, che
+
+La distribuzione dei goal totali seguono approssimativamente una distribuzione di Poisson
+{: .notice--success .text-center}
+
 Per poter dire se questa affermazione sia vero o meno, dobbiamo ricorrere al test del chi quadro. 
+
 <div class="dida_right">
-  <h4>Info box</h4>
+  <h1>Info box</h1>
 Il test del chi quadro è un test necessario nel caso si voglia verificare che le frequenze dei valori osservati abbiano un andamento simile alle frequenze teoriche di una distribuzione di probabilità scelta.
 La formula per ottenere il valore &chi;<SUP>2</SUP> è
 $$
 \chi^{2}=\sum _{i=1}^{k}\frac{(o_{i}-e_{i})^{2}}{e_{i}}  
 $$
 dove o<SUB>i</SUB> e e<SUB>i</SUB> sono, rispettivamente, le frequenze osservate e teoriche. Questo test fu ideato da Karl Pearson, padre del Pearson citato prima!
-</div>Partendo dalle frequenze delle osservazioni misurate (cioè quante volte un certo numero di gol sono stati effettuati nelle partite), 
-ottenendo le frequenze teoriche, possiamo vedere quante queste differiscono tra loro. Il valore $$\chi ^{2}$$ quantifica questa informazione e, tramite le tavole [tavole della distribuzione](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf)
+	
+	
+</div>
+
+Partendo dalle frequenze delle osservazioni misurate (cioè quante volte un certo numero di gol sono stati effettuati nelle partite), 
+possiamo calcolare le frequenze teoriche e, confrontale, vedere quante queste differiscono tra loro. Il valore $$\chi ^{2}$$ quantifica questa informazione e, tramite le tavole [tavole della distribuzione](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf)
 è possibile determinare se l'ipotesi nulla sia verificata o meno.
 
 Passando dalle parole ai fatti, vediamo lo script python usato per ottenere i risultati:
-
-
 ```
-from scipy.stats import chisquare
+from scipy.stats import chisquare	#importiamo la funzione chisquare
 
-for state in ['Home','Away']:
-    
-    obs = df_FT[state].values
-
-    sum_tot = np.sum(obs)
-	
-    if state == 'Home':
-        mean_to_use = mean_home_FT
-    else:
-        mean_to_use = mean_away_FT
-
-
-    exp = [poisson.pmf(i, mean_to_use)*sum_tot for i in range(0,len(obs))]
-
-    chi2_stat, p_val = chisquare(np.array(obs), np.array(exp), ddof=0)
-    print("==="+state+"===")    
-    print("===Chi2 Stat===")
+for mean_to_use,state,name_col in zip([mean_home,mean_away],["Home","Away"],['FTHG','FTAG']):	#Questa parte è simile a quella di prima
+    obs = df_FT[state].values									#ma l'ho inserita solo per una più
+    sum_tot = np.sum(obs)									#chiara visualizzazione
+    exp = [poisson.pmf(i, mean_to_use)*sum_tot for i in range(0,len(obs))]			#
+    chi2_stat, p_val = chisquare(np.array(obs), np.array(exp))					#Questa è la parte nuova legata al
+    print("==="+state+"===")    								#del valore chi e p (poi stampiamo i
+    print("===Chi2 Stat===")									#valori ottenuti
     print(chi2_stat)
     print("===P-Value===")
     print(p_val)
 	
 ```
 
-Da questo breve programma, ciò che abbiamo ottenuto è
+I valori ottenuti sono
 
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Valori</th>
@@ -260,13 +266,7 @@ Da questo breve programma, ciò che abbiamo ottenuto è
 </tbody></table>
 	
 
-
-
-
-
-Questo ci dice che, per esempio, nel caso dei gol in casa i valori di $$\chi$$ quadro sono 8.53308 con 7 gradi di libertà e un p-value $$(P(> X^2) = 0.28794)$$,
- il ché significa che la probabilità del valore di chi quadro nelle [tavole della distribuzione del chi quadrato](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf) di essere maggiore è
- del ≈ 29%. Perciò è possibile dire che c'è il 29% di possibilità che le due distribuzioni di valori siano uguali e che quindi l'ipotesi nulla può essere accettata!
+Questo ci dice che, per esempio, nel caso dei goal in casa i valori di $$\chi ^2$$ e p-value($$(P(>\chi^2)$$) sono rispettivametne 8.53308 e 0.28794), il ché significa che la probabilità del valore di chi quadro nelle [tavole della distribuzione del chi quadrato](http://www00.unibg.it/dati/corsi/40025/74822-tavola_chi2.pdf) di essere maggiore è del ≈ 29%. Perciò è possibile dire che c'è il 29% di possibilità che le due distribuzioni di valori siano uguali e che quindi l'ipotesi nulla può essere accettata!
 
 <div style="align: center; text-align:center;">
     <img src="https://i.gifer.com/Fh5.gif"  class="center">
@@ -282,10 +282,9 @@ Possiamo calcolare la probabilità di vittoria di una squadra rispetto ad un'alt
 
 Fermiamoci un attimo e respiriamo.
 
-Il modello di regressione lineare è un modo generale per cercare di trovare funzione che rappresenti tutti punti in un grafico. Se i punti non sono distribuiti normalmente (cioè non seguono una distribuzione di Gauss),
-allora dobbiamo ricorrere al modello <b>generalizzato</b> di regressione lineare e poiché nel nostro caso i punti seguono una distribuzione di Poisson, allora ecco che useremo il glm Poissoniano!
+Il modello di regressione lineare è un modo generale per cercare di trovare funzione che rappresenti tutti punti in un grafico. Se i punti non sono distribuiti normalmente (cioè non seguono una distribuzione di Gauss), allora dobbiamo ricorrere al modello <b>generalizzato</b> di regressione lineare e, poiché nel nostro caso i punti seguono una distribuzione di Poisson, allora ecco che useremo il glm poissoniano!
 
-Lo script python che farà ciò è:
+Importiamo la libreria <i>statsmodels</i> e costruiamo il modello tramite la funzione glm.
 ```
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
@@ -299,29 +298,27 @@ poisson_model = smf.glm(formula="goals ~ home + team + opponent", data=goal_mode
 poisson_model.summary()
 ```
 
-Per ottenere
+Quello che otteniamo è
 
 {% include /Articolo1/Tabella_modello_1.html %}
 {% include /Articolo1/Tabella_modello_2.html %}
 
-Dalla prima tabella possiamo estrarre qualche informazione, come ad esempio sappiamo che la variabile dipendente sono i gol, che il numero di dati disponibili sono 760 e che la funzione usata, ovvero la fuzione link, è il logaritmo.
+Dalla prima tabella possiamo estrarre qualche informazione: ad esempio sappiamo che la variabile dipendente sono i goal, che il numero di dati disponibili sono 760 e che la funzione usata, ovvero la fuzione link, è il logaritmo.
 
 Nella seconda, invece, abbiamo diverse colonne che rappresentano:
 
 - il coefficiente e l'errore associato
-- il valore z, pari al rapporto tra il coefficiente e l'errore associato, e il relativo P-Value
+- il valore z, pari al rapporto tra il coefficiente e l'errore associato, e il relativo p-Value
 - l'intervallo di confidenza
 
-Di tutti questi valori quello che sicuramente ci interessa maggiormente è il P-value, poiché ci permette di capire quale variabile influisce maggiormente: infatti se fissiamo il livello di signicatifità del p-value al 5%, allora possiamo notare che sicuramente una variabile importante potrebbe essere la media gol della Juventus in casa (pari al 2%) o, anche, quello della Sampdoria fuori casa (pari al 3.6%).
-I valori predenti nella colonna <b>Coef</b> rappresentano i valori della funzione logaritmo (per un maggiore dettaglio vedere [qui](http://www.dima.unige.it/~rogantin/ModStat/Epidemiologia/teoria.pdf)).
+Di tutti questi valori quello che sicuramente ci interessa maggiormente è il p-value, poiché ci permette di capire quale variabile influisce maggiormente: infatti se fissiamo il livello di signicatifità del p-value al 5%, allora notiamo che sicuramente una variabile importante è la media gol della Juventus in casa (pari al 2%) o, anche, quello della Sampdoria fuori casa (pari al 3.6%).
+I numeri presenti nella colonna <b>Coef</b> rappresentano i valori della funzione logaritmo (per un maggiore dettaglio vedere [qui](http://www.dima.unige.it/~rogantin/ModStat/Epidemiologia/teoria.pdf)): quelli positivi corispondenti alla riga con <i>Team[Squadra]</i> indicano le squadre con una maggiore predisposizione al gol, mentre quelli corrispondenti alla riga <i>Opponent[squadra]</i> indicano quelle squadre con una maggiore capacità di resistere al gol. Alla fine della colonna in questione troviamo il valore <i>home</i> il quale indica in generale la maggiore predisposizione delle squadre che giocano in casa a segnare maggiormente rispetto a quelle in trasferta.
 
-Quelli indicati con Team[Squadra] indicano, quando positivi, una maggiore predisposizione al gol, mentre, quando più vicini al valore 0, a nessun effetto. Viceversa i valori indicati con Opponent[squadra] indicano quelle squadre con una maggiore capacità di resistere al gol. Alla fine della colonna troviamo il valore <i>home</i> il quale indica la maggiore disposizione delle squadre che giocano in casa a segnare maggiormente rispetto a quelle in trasferta.
-
-Passiamo a un caso pratico, che tutte queste parole confondono.
+Passiamo a un caso pratico, che tutte questi numeri e parole confondono.
 
 <div class="tenor-gif-embed center" data-postid="5381579" data-share-method="host" data-width="50%" data-aspect-ratio="1.375"><a href="https://tenor.com/view/doc-brown-back-to-the-future-when-you-remember-when-you-cant-remember-if-christopher-lloyd-gif-5381579">Doc Brown Back To The Future GIF</a> from <a href="https://tenor.com/search/docbrown-gifs">Docbrown GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-Prendiamo come esempio la Juventus: essa presenta come valore team 0.3966, mentre come valore opponent -0.4564. Possiamo fare un confronto con la Lazio la quale presenta una capacità di fare goal maggiore rispetto alla Vecchia Signora (infatti presenta un valore home di 0.4578), ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). Infine possiamo notare che le squadre con una migliore difesa sono quelle che risultano essere entrate in Champion's League l'anno scorso (quindi è vero che"In Serie A vince chi non subisce goal"!)
+Prendiamo come esempio la Juventus: essa presenta come valore team 0.3966, mentre come valore opponent -0.4564. Possiamo fare un confronto con la Lazio la quale presenta una capacità di fare goal maggiore rispetto alla Vecchia Signora (infatti presenta un valore home di 0.4578), ma ha una capacità di difendersi nettamente peggiore (valore opponent 0.2630). Possiamo, inoltre, notare che le squadre con una migliore difesa sono quelle che risultano essere entrate in Champion's League l'anno scorso (quindi è vero il detto che "<i>In Serie A vince chi non subisce goal</i>"!)
 
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Squadre</th>
@@ -349,23 +346,26 @@ Prendiamo come esempio la Juventus: essa presenta come valore team 0.3966, mentr
 <td >-0.2536</td>
 </tr>
 </tbody></table>
-Cerchiamo ora di avvicinarci alla simulazione del campionato di Serie A.
+
+Cerchiamo quindi di arrivare finalmente a quanto promesso da inizio articolo: la simulazione del campionato di Serie A.
 
 Il primo step è simulare l'esito di una partita tra due squadre, partendo da quanto ottenuto fino ad ora.
+
 Prendiamo la Juventus e il Napoli, rispettivamente, prima e seconda classificata del passato campionato italiano di Serie A.
+
 Supponiamo che, per semplicità, i possibili risultati varino in un intervello che va dal 3 a 0 in casa allo 0 a 3 per la squadra in trasferta (ovvero 3-0,3-1,3-2,3-3,0-3,1-3,2-3).
 
-Allora quello che avremo è una matrice di probabilità, che sembra una cosa complicata ma in realtà è molto semplice: 
-lunghe le righe abbiamo la probabilità che il Napoli possa segnare quel numero di gol entro la fine della partita, mentre, viceversa, sulle colonne abbiamo le probabilità che la Juventus possa segnare quel goal.
+Allora quello che avremo è una matrice di probabilità, un nome complicato per indicare una cosa molto semplice: 
+lungo le righe abbiamo la probabilità che il Napoli possa segnare quel numero di gol entro la fine della partita, mentre, viceversa, sulle colonne abbiamo le probabilità che la Juventus possa segnare quel goal.
 
-Quindi incrociando riga con colonna abbiamo la probabilità che una partita finisca con un certo risultato.
+Incrociando la riga con la colonna abbiamo la probabilità che una partita finisca con un certo risultato.
 
-Facendo la simulazione abbiamo:
+Simulando abbiamo:
 <table class="table table-bordered table-hover table-condensed">
 
 <tbody>
 <tr>
-<td >Napli\Juventus</td>
+<td >Napoli\Juventus</td>
 <td>0</td>
 <td >1</td>
 <td >2</td>
@@ -407,22 +407,27 @@ Analizzando i valori, abbiamo che il risultato più probabile per Napoli Juventu
 Quindi il modello sulla singola partita sembra essere coerente!
 
 Sommando i risultati lungo la diagonale abbiamo la probabilità totale che il risultato finale sia un pareggio, mentre sommando la parte superiore (o inferiore) della matrice abbiamo la probabilità che la squadra fuori casa (in casa)
-vinca. In questo caso la probabilità che la partita finisca in pareggio è 0.28705, mentre che vinca la Juventus è 0.35547 o il Napoli è 0.30328. In sostanza quindi è più probabile che la vecchia signora vinca la partita.
+vinca. In questo caso la probabilità che la partita finisca in pareggio è 0.28705, mentre che vinca la Juventus è 0.35547 o il Napoli è 0.30328. In sostanza quindi è più probabile che la <i>Vecchia Signora</i> vinca la partita.
 
-Finalmente arriviamo alla parte finale del nostro viaggio....vediamo se riusciamo a predire la vincitrice del campionato!
+Ed è qui che finalmente arriviamo alla parte finale del nostro viaggio....vediamo se riusciamo a predire la vincitrice del campionato!
+
 L'idea è quella di far scontrare tutte le squadre in maniera casuale e simulare gli incontri con il modello ottenuto. 
+
 ```
 dict_classifica = dict()
 for squadra in Partite_1718['HomeTeam'].unique(): #Creiamo il dizionario dove le squadre sono le chiavi
     dict_classifica[squadra] = 0				  
 for squadra_home,squadra_away in zip(Partite_1718['HomeTeam'],Partite_1718['AwayTeam']): 
-    simulation = simulate_match(poisson_model, squadra_home,squadra_away, max_goals=15)  #Effettuiamo la simulazione tramite il modello costruito
-    prob_home = np.sum(np.tril(simulation, -1))											 #e calcoliamo la probabilità che la squadra che gioca in casa vinca sommando gli elementi del triangolo superiore,
-    prob_par = np.sum(np.diag(simulation))												 #la probabilità del pareggio sommando gli elementi sulla diagonale e, infine,
-    prob_away = np.sum(np.triu(simulation, 1))											 #la probabilità che la squadra che gioca fuori casa vinca sommando gli elementi del triangolo inferiore.
-    result = a.index(max([prob_home,prob_par,prob_away]))								 #Riassumo i risultati e a seconda del risultato, diamo il punteggio per la costruzione della classifica.
+    simulation = simulate_match(poisson_model, squadra_home,squadra_away, max_goals=15) #Effettuiamo la simulazione tramite
+    prob_home = np.sum(np.tril(simulation, -1))						#il modello costruito e calcoliamo la 
+    prob_par = np.sum(np.diag(simulation))						#probabilità che la squadra che giochi in casa 
+    prob_away = np.sum(np.triu(simulation, 1))						#vinca sommando gli elementi del triangolo 
+    result = a.index(max([prob_home,prob_par,prob_away]))				#superiore, la probabilità del pareggio sommando 											 #gli elementi sulla diagonale e, infine, la
+    											#probabilità che la squadra che gioca fuori casa
+											#vinca sommando gli elementi del triangolo
+											#inferiore. 
 
-    if result == 0:
+    if result == 0:		#Riassumo i risultati e a seconda del risultato, diamo il punteggio per la costruzione della classifica.
         dict_classifica[squadra_home] = dict_classifica[squadra_home]+3
     if result == 1:
         dict_classifica[squadra_home] = dict_classifica[squadra_home]+1
@@ -434,22 +439,28 @@ La classifica finale è
 {% include /Articolo1/classifica_teorica.html %}
 
 Arrivati a questo punto facciamo un confronto tra la classifica <i>reale</i> e quella <i>teorica</i>: notiamo che le squadre dal primo al sesto posto risultano avere la stessa posizione ma un numero diversi di punti.
-Addirittura per la Juventus si ha la vittoriaa in tutti i match (quindi per un totale di 114 punti!)Il motivo di questa differenza è data dal fatto che non sono stati presi in considerazione diversi fattori, come gli infortuni, la stanchezza
-o eventuali psicologici.
+Addirittura per la Juventus si ha la vittoria in tutti i match (quindi per un totale di 114 punti!). Il motivo di questa differenza è data dal fatto che non sono stati presi in considerazione diversi fattori, come gli infortuni, la stanchezza o eventuali psicologici.
 Di fatto si è ipotizzato che ogni squadra schierasse la formazione titolare, giocasse solo il campionato nazionale  e ogni giocatore fosse sempre in forma.
-Procedendo verso la parte dell'Europa League notiamo una leggera imprecisione nella predizione. Qualche squadra risulta essere qualche posto sotto o sopra rispetto a quello reale. La squadra con maggiore differenza in termini di classifica è il Sassuolo,
+
+Procedendo verso la zona dell'Europa League notiamo una leggera imprecisione nella predizione. Qualche squadra risulta essere sotto o sopra rispetto alla posizione reale. La squadra con maggiore differenza in questi termini di classifica è il Sassuolo,
 il quale secondo il modello sarebbe fovuto retrocedere, mentre nella realtà è arrivato sesto. Sempre perché a noi i piacciono i grafici, ecco qua rappresentazione di quanto detto:
 
 {% include /Articolo1/graf_bubble.html %}
-Come di vede abbiamo dei pallini in una retta, i quali rappresentano le posizioni ideali nella classifica, e quelli colorati, che rappresentano i valori incrociati della posizione di classifica reale e calcolata delle diverse squadre. 
-Se il pallino colorato si trova sopra la retta significa che la squadra è stata sottostimata dal punto di vista teorico e, viceversa, nel caso opposto. Ad esempio il Sassuolo graficamente è la squadra più distante dalla retta dato che l'anno scorso è arrivato
-undicesimo, mentre dal punto di vista teorico è stato ipotizzato diciottesimo. Conludiamo la descrizione del grafico dicendo che i pallini colorati differenziano anche nella grandezza: più il pallino è piccolo più la differenza di punti tra la classifica reale e teorica è minore
-mentre più è grande il raggio, maggiore è la distanza. Poiché abbiamo anche dei valori negativi, allora abbiamo riparametrizzato i valori tra 1, il quale rappresenta il cerchio con raggio minore (vedi Sassuolo), e 10, il quale, invece, rappresenta il cerchio con raggio maggiore (vedi Inter).
+
+Come si vede abbiamo sia dei pallini grigi monocromatici posti lungo una retta, i quali rappresentano le posizioni ideali nella classifica, e quelli colorati, che rappresentano i valori incrociati della posizione di classifica reale e calcolata delle diverse squadre. 
+
+Se il pallino colorato si sovrappone a quello grigio, allora le previsione teorica coincide con quella reale, altrimenti se è collocato sopra sopra la retta significa che la squadra è stata sottostimata dal punto di vista teorico e, viceversa, nel caso opposto. Ad esempio possiamo cosniderare il Sassuolo, il quale graficamente, come si vede, è la squadra più distante dalla retta in quanto l'anno scorso è arrivato undicesimo, mentre dal punto di vista teorico è stato ipotizzato diciottesimo. 
+
+Conludiamo la descrizione del grafico dicendo che i pallini colorati differenziano anche nella grandezza: più il pallino è piccolo più la differenza di punti tra la classifica reale e teorica è minore mentre più è grande il raggio, maggiore è la distanza. Poiché abbiamo anche dei valori negativi, allora abbiamo riparametrizzato i valori tra 1, il quale rappresenta il cerchio con raggio minore (vedi Sassuolo), e 10, il quale, invece, rappresenta il cerchio con raggio maggiore (vedi Inter).
 ## Conclusione
-Da dati del campionato 2017/2018 abbiamo effettuato un'analisi che ci ha permesso di estrarre informazioni statistiche sulle singole squadre. Abbiamo notato che la media dei goal in casa è differente rispetto a quella fuori casa e grazie a dei test statistici, abbiamo accertato con sicurezza che effettivamente è così. La statistica, inoltre, ci ha anche dato una mano a capire se possiamo modellizare con sicurezza la frequenza dei goal nel campionato con una distribuzione di Poisson, 
-così da permettere di creare un modello che ci permettesse di creare un <i>simulatore</i> di partite da cui ricavare la classifica. Il campionato 2017/2018 è stato vinto dalla Juventus, con il Napoli secondo e la Roma terza, e il nostro modello ha predetto esattamente questi risultati (con l'Inter parimerito con la Roma). Naturalmente la predizione per alcune squadre non è sufficientemente buona, ma possiamo più che accontentarci per questo livello (I'm not in academia any more, Baby!).
+Da dati del campionato 2017/2018 abbiamo effettuato un'analisi che ci ha permesso di estrarre informazioni statistiche sulle singole squadre. Abbiamo notato che la media dei goal in casa è differente rispetto a quella fuori casa e grazie a dei test statistici, abbiamo accertato questa ipotesi. La statistica, inoltre, ci ha anche dato una mano a capire se possiamo modellizare con sicurezza la frequenza dei goal nel campionato con una distribuzione di Poisson. Poiché anche questa ipotesi si è dimostrata corretta, abbiamo costruito un <i>simulatore</i> di partite da cui ricavare una classifica teorica: in questa stagione simulata il campionato è stato vintodalla Juventus, con il Napoli secondo e la Roma e l'Inter terze a pari punti. Andando a confrontare i posizionamenti con quelli reali, notiamo che il nostro modello risulta essere abbastanza preciso. Naturalmente la predizione per alcune squadre non è sufficientemente buona, ma possiamo accontentarci per questo livello di elaborazione.
+
 Vorrei citare le seguenti fonti, fondamentali per l'estensione di questo primo articolo:
 - https://dashee87.github.io/ :Ottimo, ottimo, ottimo blog sul data science. Ironico e divertente permette di comprendere bene quello che si sta leggendo.
 - https://www1.maths.leeds.ac.uk/~voss/projects/2010-sports/JamesGardner.pdf : articolo da cui ho avuto l'ispirazione per questa idea.
+
+Concludo ringraziandovi per essere arrivati fin qui e spero che possiamo ritrovarci nuovamente in qualche altro articolo!
+
+<iframe src="https://giphy.com/embed/26BoCW1FA2980EaR2" width="480" height="205" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/26BoCW1FA2980EaR2">via GIPHY</a></p>
 
 
