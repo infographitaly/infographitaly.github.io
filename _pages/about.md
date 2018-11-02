@@ -1,12 +1,12 @@
 ---
 layout: single
 title: "About"
-date: "4 November 2016"
+date: "10 November 2016"
 permalink: /about/
 author_profile: true
 
 ---
-
-I studied maths at [University College Cork (UCC)](https://en.wikipedia.org/wiki/University_College_Cork). It's true that its first Maths professor was [George Boole](https://en.wikipedia.org/wiki/George_Boole). After UCC, 
-I earned a PhD in neuroscience from [University College London (UCL)](https://en.wikipedia.org/wiki/University_College_London). Ah... all of Coldplay went to UCL. Mathematical biology was the cool thing back in 2009. But like 
-any good doctor these days, I left actual science for the (relatively) sexy world of data science. My current interests involve mining twitter for the next mathematical fad.
+Ho studiato Fisica all'Università degli Studi di Roma "Tor Vergata". Appassionato di statistica e di analisi dati, mi interessa tutto ciò che gira intorno al mondo del data science. Sebbene abbia finito l'università da un po', continuo a studiare e ad appassionarmi a tutte le nuove tecnologie.
+Ho quindi abbandonato il mondo della scienza per il lavoro [più sexy del 21° secolo](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century).
+Suono la chitarra ([qui](https://www.youtube.com/channel/UCHZIzvw6JB9UfBUGPdClU3g?fbclid=IwAR24wvfqIaWg6UAkMLwpUQuZann_WoKk56h0bKvnFaAzDjKjJrMuUFSQJac) il canale youtube del gruppo in cui suonavo) e sono estremamente appassionato di fumetti (qualcuno ha detto Batman?).
+Il blog dove vi trovate è interamente costruito da me: è ospitato su github e sfrutta il tema [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/). Adoro Python e R ma preferisco per i grafici altri strumenti, come chart.js, d3js o nvd3.
