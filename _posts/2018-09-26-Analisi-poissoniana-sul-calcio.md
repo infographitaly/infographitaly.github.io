@@ -461,6 +461,6 @@ Vorrei citare le seguenti fonti, fondamentali per l'estensione di questo primo a
 
 Concludo ringraziandovi per essere arrivati fin qui e spero che possiamo ritrovarci nuovamente in qualche altro articolo!
 
-<iframe src="https://giphy.com/embed/enrJ2JqF9UKm3J6BM7" width="480" height="450" frameBorder="0" class="giphy-embed center" allowFullScreen></iframe><p></p>
+<iframe src="https://giphy.com/embed/enrJ2JqF9UKm3J6BM7" width="480" height="450" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/enrJ2JqF9UKm3J6BM7"></a></p>
 
 
