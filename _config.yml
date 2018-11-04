@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Valerio"
   avatar           : /images/mom_bio.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Scientist & Analyst interessato allo sport, all'antropologia, alla psicologia e in citazione di film."
+  bio              : "Data Scientist & Analyst interessato allo sport, all'antropologia e in citazione di film."
   location         : "Roma"
   email            :
   linkedin: "valerio-armuzza"
