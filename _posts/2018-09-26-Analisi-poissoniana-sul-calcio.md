@@ -15,12 +15,11 @@ tags:
   - football
   - soccer
   - python
-  - scrapy
   - Amchart
   - Chart.js
 mathjax: true
-author: "V A"
-date: "30 Ottobre 2018"
+author: "Valerio"
+date: "8 Novembre 2018"
 toc: false
 ---
 ## Intro

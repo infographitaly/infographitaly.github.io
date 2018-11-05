@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "About"
-date: "10 November 2016"
+date: "8 Novembre 2018"
 permalink: /about/
 author_profile: true
 
