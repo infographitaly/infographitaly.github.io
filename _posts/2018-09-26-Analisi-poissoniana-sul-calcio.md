@@ -1,5 +1,5 @@
 ---
-title: "Analisi poissoniana sul Calcio"
+title: "Monsieur Poisson e il Calcio: metodi predittivi , GLM e altre cose per vedere nel futuro"
 excerpt: "Questo post espone un'analisi statistica condotta sui dati disponibili sulla serie A della stagione 2017-2018"
 layout: single
 header:
