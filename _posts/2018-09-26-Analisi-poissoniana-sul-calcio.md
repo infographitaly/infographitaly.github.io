@@ -19,7 +19,7 @@ tags:
   - Chart.js
 mathjax: true
 author: "Valerio"
-date: "8 Novembre 2018"
+date: "7 Novembre 2018"
 toc: false
 ---
 ## Intro
