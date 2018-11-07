@@ -279,7 +279,7 @@ Procediamo e cerchiamo di costruire il modello. Il risultato che finora abbiamo 
 
 Ma come ci può aiutare a predirre la futura vincitrice della serie A?
 
-Possiamo calcolare la probabilità di vittoria di una squadra rispetto ad un'altra, costruendo un modello generalizzato di regressione lineare poissoniano. 
+Possiamo calcolare la probabilità di vittoria di una squadra rispetto ad un'altra, costruendo un modello generalizzato di regressione lineare poissoniano (abbreviato come <i>glm</i>). 
 
 Fermiamoci un attimo e respiriamo.
 
